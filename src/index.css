@@ -1,13 +1,35 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Nokora Black';
+    src: url('./assets/fonts/Nokora/Nokora-Black.ttf');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+    font-family: 'Nokora Bold';
+    src: url('./assets/fonts/Nokora/Nokora-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Nokora Light';
+    src: url('./assets/fonts/Nokora/Nokora-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Nokora Regular';
+    src: url('./assets/fonts/Nokora/Nokora-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Nokora Thin';
+    src: url('./assets/fonts/Nokora/Nokora-Thin.ttf');
+}
+
+
+.section-container {
+    margin: 0 auto;
+    padding: 0 2em;
+    max-width: 1180px;
 }
