@@ -4,13 +4,15 @@ import { envelopeOpen } from 'fontawesome'
 import { faEnvelopeOpen } from '@fortawesome/free-regular-svg-icons'
 import Text from '../../components/Text'
 import SendMoneyWidget from '../../widgets/SendMoneyWidget'
+import Title from '../../components/Title'
+import SubHeading from '../../components/SubHeading'
 
 function SendMoneyForm() {
     return (
-        <section className='section-container !py-20 flex flex-col  items-center'>
+        <section className='section-container flex flex-col  items-center'>
             <div className='w-full max-w-4xl flex flex-col  items-center gap-5 lg:gap-8'>
                 <Badge icon={faEnvelopeOpen}>Daily Finances</Badge>
-                <h2 className='text-3xl lg:text-5xl text-center font-nokora-bold'>Efficienct at its best: Moneliq's daily finance</h2>
+                <Title>Efficienct at its best: Milestone's daily finance</Title>
                 <Text>Empowering global financial management</Text>
             </div>
 
@@ -19,8 +21,8 @@ function SendMoneyForm() {
                 <div className='flex flex-col gap-5 items-start pr-28'>
 
                     <Badge icon={faEnvelopeOpen}>Account Transfer</Badge>
-                    <h4 className='text-2xl lg:text-4xl font-nokora-regular'>Global Payments: your gateway to secure transactions</h4>
-                    <Text>Moneliq: simplifying payments in the UK, Europe, and internationally</Text>
+                    <SubHeading>Global Payments: your gateway to secure transactions</SubHeading>
+                    <Text>Milestone: simplifying payments in the UK, Europe, and internationally</Text>
 
                 </div>
 

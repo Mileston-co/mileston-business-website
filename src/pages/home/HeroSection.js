@@ -21,10 +21,10 @@ function HeroSection() {
           <Text className="mx-5">
             Spend, save and manage your money, all in one place. Open a full bank account from your phone, for free.
           </Text>
-          <Button type='button' color='white'>Open Moneliq account</Button>
+          <Button type='button' color='white'>Open Milestone account</Button>
         </div>
 
-        <img src={ dashboardHeroImage } className='w-full rounded-s-3xl mt-8' alt="Moneliq Dashboard" />
+        <img src={ dashboardHeroImage } className='w-full rounded-s-3xl mt-8' alt="Milestone Dashboard" />
         
       </div>
     </section>
