@@ -2,10 +2,14 @@ import { analytics, key } from 'fontawesome'
 import React, { useState } from 'react'
 import Card from '../../components/Card'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBagShopping, faCodeBranch } from '@fortawesome/free-solid-svg-icons'
+import { faBagShopping, faCodeBranch, faLock } from '@fortawesome/free-solid-svg-icons'
 import { Line } from '@ant-design/plots'
 import ProgressBar from '../../components/ProgressBar'
 import ReactCountryFlag from 'react-country-flag'
+import { Spin } from 'antd'
+import mileStoneLogo from "../../assets/images/milestone.png"
+import sendPaymentLinkCover from "../../assets/images/send-payment-link-cover.png"
+
 
 function Features() {
 
@@ -39,7 +43,7 @@ function Features() {
             <div className='lg:w-2/3'>
                 <Card>
                     {activeTab === 'analytics' && <Analytics />}
-                    {activeTab === 'multicurrency' && <Multicurrency />}
+                    {activeTab === 'multicurrency' && <SendPaymentLinkWidget />}
                 </Card>
             </div>
         </section>
@@ -62,6 +66,71 @@ const Feature = ({ title, icon, children }) => {
     )
 }
 
+const SendPaymentLinkWidget = () => {
+    const [amount, setAmount] = useState('14');
+    const [currency, setCurrency] = useState('USDC');
+    const [recipient, setRecipient] = useState('John Smith');
+
+    const [sendingMilestoneMoney, setSendingMilestoneMoney] = useState(false);
+    const [moneySent, setMoneySent] = useState(false);
+
+    return (
+        <div className="bg-white rounded-3xl shadow-lg  h-full w-full flex flex-col justify-between ">
+            <img className='rounded-t-3xl' src={sendPaymentLinkCover} />
+            <div className='p-6'>
+                <div className='flex items-center gap-5 mb-5'>
+                    <div className='w-14 h-14 rounded-full flex items-center justify-center bg-black'><img className='w-10 h-10 object-contain' src={mileStoneLogo} /></div>
+                    <h3 className="text-lg font-semibold text-gray-800">2 T-Shirts</h3>
+                </div>
+                {/* Amount and Currency */}
+                <div className="grid grid-cols-4 items-center border rounded-lg px-4 py-2 mb-4 w-full">
+                    <input
+                        type="text"
+                        value={`USDC ${amount}`}
+                        onChange={(e) => setAmount(e.target.value.replace('USDC ', ''))}
+                        className="col-span-3 text-lg font-semibold text-gray-800 focus:outline-none"
+                        placeholder="Amount"
+                    />
+                    <select
+                        value={currency}
+                        onChange={(e) => setCurrency(e.target.value)}
+                        className="text-lg font-semibold text-gray-800 focus:outline-none bg-transparent text-end pr-2  ml-2"
+                    >
+                        <option value="USDC">USDC</option>
+                        <option value="USDT">USDT</option>
+                        {/* Add more currencies as needed */}
+                    </select>
+                </div>
+            </div>
+
+            {/* Confirm Button */}
+            <div className="flex flex-col gap-3 p-6">
+                {sendingMilestoneMoney == false && (<button onClick={() => {
+                    setSendingMilestoneMoney(true);
+                    setTimeout(() => {
+                        setMoneySent(true);
+                    }, 3000);
+                }} className="w-full bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition">
+                    Pay with Milestone
+                </button>)}
+
+                {sendingMilestoneMoney === true && (<button onClick={() => setSendingMilestoneMoney(true)} className={` bg-green-200 text-green-500 flex items-center justify-center mx-auto h-10 rounded-lg font-semibold transition-all ${moneySent ? 'w-full' : 'w-10'}`}>
+                    {moneySent == false && <Spin />}
+                    {moneySent && (<p>Successfull!</p>)}
+                </button>)}
+
+                {sendingMilestoneMoney == false && (<button className="w-full bg-gray-100 text-nlack py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+                    Pay with wallet connect
+                </button>)}
+            </div>
+
+            <div className='flex gap-5 items-center justify-center text-sm text-gray-400 p-6'>
+                <FontAwesomeIcon icon={faLock} />
+                <p>Secured Checkout Powered by Milestone</p>
+            </div>
+        </div>
+    );
+};
 
 const Multicurrency = () => {
     const currencies = [
