@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react'
 import HeroSection from './home/HeroSection'
 import SendMoneyForm from './home/SendMoneyForm'

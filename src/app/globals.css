@@ -2,20 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.App {
+  text-align: center;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@font-face {
+  font-family: 'Nokora Black';
+  src: url('/assets/fonts/Nokora/Nokora-Black.ttf');
+}
+
+@font-face {
+  font-family: 'Nokora Bold';
+  src: url('/assets/fonts/Nokora/Nokora-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Nokora Light';
+  src: url('/assets/fonts/Nokora/Nokora-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Nokora Regular';
+  src: url('/assets/fonts/Nokora/Nokora-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Nokora Thin';
+  src: url('/assets/fonts/Nokora/Nokora-Thin.ttf');
+}
+
+
+.section-container {
+  margin: 10em auto;
+  padding: 0 2em;
+  max-width: 1180px;
+}
+
+.fade-down {
+  position: relative;
+}
+
+.fade-down::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to bottom, transparent, rgb(243 244 246));
+  border-radius: inherit;
+  pointer-events: none;
 }

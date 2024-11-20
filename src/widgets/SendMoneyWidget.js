@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import Card from '../components/Card';
-import mileStoneLogo from "../assets/images/mileston.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
-import { Spin } from 'antd';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const SendMoneyWidget = () => {
     const [amount, setAmount] = useState('14');
@@ -17,7 +16,7 @@ const SendMoneyWidget = () => {
             <div className="bg-white rounded-3xl shadow-lg p-6 h-full w-full flex flex-col justify-between ">
                 <div>
                     <div className='flex items-center gap-5 mb-5'>
-                        <div className='w-14 h-14 rounded-full flex items-center justify-center bg-black'><img className='w-10 h-10 object-contain' alt="" src={mileStoneLogo} /></div>
+                        <div className='w-14 h-14 rounded-full flex items-center justify-center bg-black'><img className='w-10 h-10 object-contain' alt="" src={"/assets/images/mileston.png"} /></div>
                         <h3 className="text-lg font-semibold text-gray-800">Awesome hoddie</h3>
                     </div>
                     {/* Amount and Currency */}
@@ -53,7 +52,7 @@ const SendMoneyWidget = () => {
                     </button>)}
 
                     {sendingMilestoneMoney === true && (<button onClick={() => setSendingMilestoneMoney(true)} className={` bg-green-200 text-green-500 flex items-center justify-center mx-auto h-10 rounded-lg font-semibold transition-all ${moneySent ? 'w-full' : 'w-10'}`}>
-                        {moneySent === false && <Spin />}
+                        {moneySent === false && <CircularProgress />}
                         {moneySent && (<p>Successfull!</p>)}
                     </button>)}
 

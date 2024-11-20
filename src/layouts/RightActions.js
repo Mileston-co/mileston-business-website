@@ -1,7 +1,5 @@
 // src/components/RightActions.js
 import React from 'react';
-import { Link } from 'react-router-dom';
-import LanguageSelector from './../components/LanguageSelecter';
 import Button from '../components/Button';
 
 const RightActions = () => (
