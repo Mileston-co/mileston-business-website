@@ -7,6 +7,7 @@ import Analytics from './home/Analytics'
 import Features from './home/Features'
 import CardFunctions from './home/CardFunctions'
 import CryptoCurrency from './home/CryptoCurrency'
+import { ScrollTriggeredAnimation } from '@/components/Animation';
 
 function Home() {
   return (

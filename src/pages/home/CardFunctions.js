@@ -4,6 +4,7 @@ import { faSignal, faBitcoinSign, faLock, faSun } from '@fortawesome/free-solid-
 import Title from '../../components/Title'
 import Text from '../../components/Text'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { ScrollTriggeredAnimation } from '@/components/Animation'
 
 function CardFunctions() {
 
@@ -37,13 +38,15 @@ function CardFunctions() {
         }}>
 
             <div className='flex flex-col items-center section-container gap-8 !my-0'>
-
+            <ScrollTriggeredAnimation>
                 <div className='flex flex-col justify-center items-center gap-8 max-w-xl mx-auto'>
                     <Badge bgColor='bg-green-900' textColor='text-green-300 ' icon={faSun}>Features</Badge>
                     <Title className='text-white'>Unlocking the power of Mileston Checkout</Title>
                     <Text className='text-center'>Discover the features that makes us best in the business</Text>
                 </div>
+                </ScrollTriggeredAnimation>
 
+                <ScrollTriggeredAnimation>
                 <div className='grid lg:grid-cols-3 gap-3'>
                     {functions.map((func, index) => (
                         <div key={index} className='flex flex-col items-start gap-5 bg-[#242424] rounded-2xl p-5' style={{
@@ -55,6 +58,7 @@ function CardFunctions() {
                         </div>
                     ))}
                 </div>
+                </ScrollTriggeredAnimation>
 
 
             </div>

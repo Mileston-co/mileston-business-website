@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCodeBranch, faLock } from '@fortawesome/free-solid-svg-icons'
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
+import { ScrollTriggeredAnimation } from '@/components/Animation';
 
 function Features() {
 
@@ -23,21 +24,19 @@ function Features() {
     return (
         <section className='section-container flex flex-col lg:flex-row'>
             <div className='lg:w-1/3 border-l-2 border-l-gray-200 flex flex-col gap-6 mb-5 lg:mb-0'>
-
-                {tabs.map((tab, index) => (
-                    <button onClick={() => setActiveTab(tab.key)} key={index} className='flex items-center gap-5 -m-[3px]'>
-                        <div className={`w-1 h-1 rounded-full bg-black ${activeTab === tab.key ? 'opacity-100' : 'opacity-0'}`} />
-                        <p className={`${activeTab === tab.key ? 'text-black' : 'text-gray-400'} font-nokora-regular transition-colors`}>{tab.value}</p>
-                    </button>
-                ))}
-
-
-
+                <ScrollTriggeredAnimation>
+                    {tabs.map((tab, index) => (
+                        <button onClick={() => setActiveTab(tab.key)} key={index} className='flex items-center gap-5 -m-[3px]'>
+                            <div className={`w-1 h-1 rounded-full bg-black ${activeTab === tab.key ? 'opacity-100' : 'opacity-0'}`} />
+                            <p className={`${activeTab === tab.key ? 'text-black' : 'text-gray-400'} font-nokora-regular transition-colors`}>{tab.value}</p>
+                        </button>
+                    ))}
+                </ScrollTriggeredAnimation>
             </div>
             <div className='lg:w-2/3'>
                 <Card>
-                    {activeTab === 'analytics' && <Analytics />}
-                    {activeTab === 'multicurrency' && <SendPaymentLinkWidget />}
+                    {activeTab === 'analytics' && <ScrollTriggeredAnimation> <Analytics /> </ScrollTriggeredAnimation>}
+                    {activeTab === 'multicurrency' && <ScrollTriggeredAnimation> <SendPaymentLinkWidget /> </ScrollTriggeredAnimation>}
                 </Card>
             </div>
         </section>
