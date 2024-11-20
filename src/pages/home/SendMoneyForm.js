@@ -13,7 +13,7 @@ function SendMoneyForm() {
             <ScrollTriggeredAnimation>
                 <div className='w-full max-w-4xl flex flex-col  items-center gap-5 lg:gap-8'>
                     <Badge icon={faEnvelopeOpen}>Daily Finances</Badge>
-                    <Title>Efficient at its best: Mileston's daily finance</Title>
+                    <Title>Efficient at its best: Mileston&apos;s daily finance</Title>
                     <Text>Empowering global crypto transactions</Text>
                 </div>
             </ScrollTriggeredAnimation>

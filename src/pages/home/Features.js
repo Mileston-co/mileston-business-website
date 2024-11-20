@@ -5,6 +5,7 @@ import { faCodeBranch, faLock } from '@fortawesome/free-solid-svg-icons'
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 import { ScrollTriggeredAnimation } from '@/components/Animation';
+import { CircularProgress } from '@mui/material';
 
 function Features() {
 
@@ -109,7 +110,7 @@ const SendPaymentLinkWidget = () => {
                 </button>)}
 
                 {sendingMilestonMoney === true && (<button onClick={() => setSendingMilestonMoney(true)} className={` bg-green-200 text-green-500 flex items-center justify-center mx-auto h-10 rounded-lg font-semibold transition-all ${moneySent ? 'w-full' : 'w-10'}`}>
-                    {moneySent === false && <Spin />}
+                    {moneySent === false && <CircularProgress />}
                     {moneySent && (<p>Successfull!</p>)}
                 </button>)}
 
