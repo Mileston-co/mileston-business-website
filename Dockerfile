@@ -7,7 +7,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Install dependencies (both development and production)
-RUN npm install --silent
+RUN npm install --force --silent
 
 # Copy all the application source code
 COPY . .
