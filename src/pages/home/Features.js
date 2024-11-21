@@ -16,7 +16,7 @@ function Features() {
         },
         {
             key: 'multicurrency',
-            value: 'Mileston Checkout',
+            value: 'Payment Link',
         },
     ]
 
@@ -28,8 +28,8 @@ function Features() {
                 <ScrollTriggeredAnimation>
                     {tabs.map((tab, index) => (
                         <button onClick={() => setActiveTab(tab.key)} key={index} className='flex items-center gap-5 -m-[3px]'>
-                            <div className={`w-1 h-1 rounded-full bg-black ${activeTab === tab.key ? 'opacity-100' : 'opacity-0'}`} />
-                            <p className={`${activeTab === tab.key ? 'text-black' : 'text-gray-400'} font-nokora-regular transition-colors`}>{tab.value}</p>
+                            <div className={`w-1 h-1 rounded-full mt-7 bg-black ${activeTab === tab.key ? 'opacity-100' : 'opacity-0'}`} />
+                            <p className={`${activeTab === tab.key ? 'text-black' : 'text-gray-400'} mt-7 font-nokora-regular transition-colors`}>{tab.value}</p>
                         </button>
                     ))}
                 </ScrollTriggeredAnimation>
@@ -85,12 +85,14 @@ const SendPaymentLinkWidget = () => {
                         onChange={(e) => setAmount(e.target.value.replace('USDC ', ''))}
                         className="col-span-3 text-lg font-semibold text-gray-800 focus:outline-none"
                         placeholder="Amount"
+                        disabled
                     />
                     <select
                         value={currency}
                         onChange={(e) => setCurrency(e.target.value)}
                         className="text-lg font-semibold text-gray-800 focus:outline-none bg-transparent text-end pr-2  ml-2"
-                    >
+                        diabled
+                   >
                         <option value="USDC">USDC</option>
                         <option value="USDT">USDT</option>
                         {/* Add more currencies as needed */}
