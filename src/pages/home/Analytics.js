@@ -7,32 +7,37 @@ import { faBagShopping, faChartLine, faPlane, faShop } from '@fortawesome/free-s
 import Text from '../../components/Text'
 import SubHeading from '../../components/SubHeading'
 import { ScrollTriggeredAnimation } from "@/components/Animation";
+import { faPaypal, faSquarespace, faStripe } from '@fortawesome/free-brands-svg-icons'
+import Image from 'next/image'
+import VolatilityProtection from '../../assets/images/volatility-protection.png';
+import EasyIntegration from '../../assets/images/easy-integration.jpg';
+import MilestonLogoWhite from '../../assets/images/logo-white.png';
 
 
 function Analytics() {
 
-    const currencies = [
+    const processors = [
         {
-            name: "US Dollers",
-            countryCode: "US",
-            code: "USD",
-            amount: "120,000",
-            percentage: 70
+            name: "Mileston",
+            fee: "0.4% Only!",
+            percentage: 20,
+            logo: MilestonLogoWhite,
+            milestone: true
         },
         {
-            name: "Euro",
-            countryCode: "EU",
-            code: "EUR",
-            amount: "120,000",
-            percentage: 70
+            name: "PayPal",
+            icon: faPaypal,
+            fee: "2.9% + $0.30/Tr",
+            percentage: 70,
+            milestone: false
         },
         {
-            name: "British Pound",
-            countryCode: "GB",
-            code: "GBP",
-            amount: "120,000",
-            percentage: 70
-        }
+            name: "Stripe",
+            icon: faStripe,
+            fee: "2.9% + $0.30/Tr",
+            percentage: 70,
+            milestone: false
+        },
     ]
 
     const accounts = [
@@ -58,32 +63,41 @@ function Analytics() {
     ]
 
     return (
-        <section className='section-container  grid lg:grid-cols-3 items-start gap-3'>
+        <section className='grid gap-3 items-start section-container lg:grid-cols-3'>
 
             <Feature
                 title={"Low Fees"}
                 description={"Accept business payments from around the world with at just 0.4% transaction fee."}
             >
                 <ScrollTriggeredAnimation>
-                    <div className='bg-white rounded-2xl p-5 w-full flex flex-col gap-6'>
+                    <div className='flex flex-col gap-6 p-5 w-full bg-white rounded-2xl'>
 
-                        {currencies.map((currency, index) => (
-                            <div key={index} className='flex items-center gap-5 justify-between'>
-                                <ReactCountryFlag style={{
+                        {processors.map((processor, index) => (
+                            <div key={index} className='flex gap-5 justify-between items-center'>
+                                {/* <ReactCountryFlag style={{
                                     width: '2em',
                                     height: '2em',
-                                }} countryCode={currency.countryCode} svg={true} />
-
-                                <div className='inline-flex flex-col justify-start w-full gap-2'>
-                                    <p className='font-bold text-sm'>{currency.name}</p>
-                                    <div>
-                                        <ProgressBar progress={currency.percentage} />
-                                    </div>
+                                }} countryCode={processor.countryCode} svg={true} /> */}
+                                <div style={{
+                                    minWidth: '2.2em',
+                                    height: '2.2em',
+                                }} className={`flex justify-center items-center rounded-full ${ processor.milestone ? 'bg-black' : 'bg-gray-200' }`}>
+                                    {processor.milestone ?
+                                        <Image src={processor.logo} alt="" className='object-contain w-[1.8em] h-[1.8em]' />
+                                        :
+                                        <FontAwesomeIcon className={`${ processor.milestone ? 'text-gray-200' : 'text-black' }`} icon={processor.icon} />
+                                    }
                                 </div>
 
-
-
-                                <p className='text-gray-400'>${currency.amount}</p>
+                                <div className='inline-flex flex-col gap-2 justify-start w-full'>
+                                    <div className='flex gap-2'>
+                                        <p className='text-xs font-bold'>{processor.name}</p>
+                                        <p className='text-xs text-gray-400'>{processor.fee}</p>
+                                    </div>
+                                    <div>
+                                        <ProgressBar progress={processor.percentage} />
+                                    </div>
+                                </div>
 
                             </div>
                         ))}
@@ -96,45 +110,48 @@ function Analytics() {
                 description={"Easily integrate crypto checkout with our robust APIs and start accepting payments immediately."}
             >
                 <ScrollTriggeredAnimation>
-
-                    <div className='flex flex-col gap-2'>
-
-                        <div className='bg-white rounded-2xl p-5 w-full flex  gap-5'>
-
-                            <div style={{
-                                width: '3em',
-                                height: '3em',
-                            }} className='rounded-full flex justify-center items-center bg-black'>
-                                <FontAwesomeIcon className='text-gray-200' icon={faChartLine} />
-                            </div>
-                            <div className='inline-flex flex-col justify-start gap-2'>
-                                <div className='flex items-start gap-2'>
-                                    <p className='font-bold text-lg'>$290,120.99</p>
-                                    <span className='bg-gray-200 px-1 text-xs'>+9%</span>
-                                </div>
-                                <Text className={'text-xs lg:text-xs'}>Gross Sales</Text>
-                            </div>
-                        </div>
-                        <div className='bg-white rounded-2xl p-5 w-full flex  gap-5'>
-
-                            <div style={{
-                                width: '3em',
-                                height: '3em',
-                            }} className='rounded-full flex justify-center items-center bg-black'>
-                                <FontAwesomeIcon className='text-gray-200' icon={faChartLine} />
-                            </div>
-
-                            <div className='inline-flex flex-col justify-start gap-2'>
-                                <div className='flex items-start gap-2'>
-                                    <p className='font-bold text-lg'>$290,120.99</p>
-                                    <span className='bg-gray-200 px-1 text-xs'>+9%</span>
-                                </div>
-                                <Text className={'text-xs lg:text-xs'}>Gross Sales</Text>
-                            </div>
-
-                        </div>
-
+                    <div className='flex flex-col gap-6 p-5 w-full bg-white rounded-2xl'>
+                        <Image src={EasyIntegration} alt="" className='object-contain h-[9.5em]' />
                     </div>
+
+                    {/* <div className='flex flex-col gap-2'>
+
+                            <div className='flex gap-5 p-5 w-full bg-white rounded-2xl'>
+
+                                <div style={{
+                                    width: '3em',
+                                    height: '3em',
+                            }} className='flex justify-center items-center bg-black rounded-full'>
+                                <FontAwesomeIcon className='text-gray-200' icon={faChartLine} />
+                            </div>
+                            <div className='inline-flex flex-col gap-2 justify-start'>
+                                <div className='flex gap-2 items-start'>
+                                    <p className='text-lg font-bold'>$290,120.99</p>
+                                    <span className='px-1 text-xs bg-gray-200'>+9%</span>
+                                </div>
+                                <Text className={'text-xs lg:text-xs'}>Gross Sales</Text>
+                            </div>
+                        </div>
+                        <div className='flex gap-5 p-5 w-full bg-white rounded-2xl'>
+
+                            <div style={{
+                                width: '3em',
+                                height: '3em',
+                            }} className='flex justify-center items-center bg-black rounded-full'>
+                                <FontAwesomeIcon className='text-gray-200' icon={faChartLine} />
+                            </div>
+
+                            <div className='inline-flex flex-col gap-2 justify-start'>
+                                <div className='flex gap-2 items-start'>
+                                    <p className='text-lg font-bold'>$290,120.99</p>
+                                    <span className='px-1 text-xs bg-gray-200'>+9%</span>
+                                </div>
+                                <Text className={'text-xs lg:text-xs'}>Gross Sales</Text>
+                            </div>
+
+                        </div>
+
+                    </div> */}
                 </ScrollTriggeredAnimation>
 
             </Feature>
@@ -145,26 +162,27 @@ function Analytics() {
                 description={"Get volatility protection by Mileston's auto USDC convert feature. You'll always receive USDC."}
             >
                 <ScrollTriggeredAnimation>
-                    <div className='bg-white rounded-2xl p-5 w-full flex flex-col gap-6'>
+                    <div className='flex flex-col gap-6 p-5 w-full bg-white rounded-2xl'>
 
-                        {accounts.map((account, index) => (
-                            <div key={index} className='flex items-center gap-5 justify-between'>
-                                <div className='flex items-center gap-5'>
+                        <Image src={VolatilityProtection} alt="" className='object-contain h-[9.5em]' />
+                        {/* {accounts.map((account, index) => (
+                            <div key={index} className='flex gap-5 justify-between items-center'>
+                                <div className='flex gap-5 items-center'>
 
                                     <div style={{
                                         width: '2.1em',
                                         height: '2.1em',
                                     }} className={`rounded-full flex justify-center items-center ${account.iconBg}`}>
-                                        <FontAwesomeIcon className='text-white text-xs' icon={account.icon} />
+                                        <FontAwesomeIcon className='text-xs text-white' icon={account.icon} />
                                     </div>
 
-                                    <p className='font-bold text-sm'>{account.name}</p>
+                                    <p className='text-sm font-bold'>{account.name}</p>
 
                                 </div>
 
                                 <p className='text-gray-400'>${account.amount}</p>
                             </div>
-                        ))}
+                        ))} */}
                     </div>
                 </ScrollTriggeredAnimation>
             </Feature>
@@ -178,7 +196,7 @@ function Feature({ title, description, children }) {
     return (
         <Card>
 
-            <div className='flex flex-col items-center  gap-5 mt-10'>
+            <div className='flex flex-col gap-5 items-center mt-10'>
                 <ScrollTriggeredAnimation>
                     <SubHeading>{title}</SubHeading>
                 </ScrollTriggeredAnimation>
