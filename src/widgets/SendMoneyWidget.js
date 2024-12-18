@@ -56,7 +56,7 @@ const SendMoneyWidget = () => {
                                 src="/assets/images/mileston.png"
                             />
                         </div>
-                        <h3 className="text-lg font-semibold text-gray-800">Awesome hoddie</h3>
+                        <h3 className="text-lg font-semibold text-gray-800">Black Hoodie</h3>
                     </div>
                     {/* Amount and Currency */}
                     <div className="grid grid-cols-4 items-center border rounded-lg px-4 py-2 mb-4 w-full">
