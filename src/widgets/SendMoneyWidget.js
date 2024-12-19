@@ -115,7 +115,7 @@ const SendMoneyWidget = () => {
 
                 <div className="flex gap-5 items-center justify-center text-sm text-gray-400">
                     <FontAwesomeIcon icon={faLock} />
-                    <p>Secured Checkout Powered by Milestone</p>
+                    <p>Secured Checkout Powered by Mileston</p>
                 </div>
             </div>
         </Card>

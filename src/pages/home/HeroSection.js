@@ -30,7 +30,7 @@ function HeroSection() {
           </BaseFramerAnimation>
         </div>
         <BaseFramerAnimation>
-          <img src={"/assets/images/dashboard-hero.png"} className='w-full rounded-s-3xl mt-8' alt="Milestone Dashboard" />
+          <img src={"/assets/images/dashboard-hero.png"} className='w-full rounded-s-3xl mt-8' alt="Mileston Dashboard" />
         </BaseFramerAnimation>
       </div>
     </section>

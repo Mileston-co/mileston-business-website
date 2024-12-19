@@ -13,7 +13,7 @@ function CryptoCurrency() {
             <ScrollTriggeredAnimation>
             <div className='flex flex-col justify-center gap-8 items-start pr-40'>
 
-                <Badge icon={faCoins}>Account Transfer</Badge>
+                {/* <Badge icon={faCoins}>Account Transfer</Badge> */}
                 <Title className='text-start'>Join the DeFi revolution with Mileston</Title>
                 <Text className='lg:text-lg'>Borderless transactions made simple for everyone</Text>
 

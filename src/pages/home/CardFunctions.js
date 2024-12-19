@@ -22,7 +22,7 @@ function CardFunctions() {
         },
         {
             icon: faSignal,
-            title: "Convinience",
+            title: "Convenience",
             description: "Control your funds your own way. Extremely convenient Ui and features makes Mileston best in the business."
         }
 

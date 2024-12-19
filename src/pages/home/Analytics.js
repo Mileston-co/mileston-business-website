@@ -67,7 +67,7 @@ function Analytics() {
 
             <Feature
                 title={"Low Fees"}
-                description={"Accept business payments from around the world with at just 0.4% transaction fee."}
+                description={"Accept business payments from around the world with just 0.4% transaction fee."}
             >
                 <ScrollTriggeredAnimation>
                     <div className='flex flex-col gap-6 p-5 w-full bg-white rounded-2xl'>
