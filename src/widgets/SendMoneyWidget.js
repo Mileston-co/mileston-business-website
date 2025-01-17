@@ -44,14 +44,14 @@ const SendMoneyWidget = () => {
     return (
         <Card className="h-[520px]" padding="p-10 lg:p-14">
             <div
-                className="bg-white rounded-3xl shadow-lg p-6 h-full w-full flex flex-col justify-between"
+                className="flex flex-col justify-between w-full h-full p-6 bg-white shadow-lg rounded-3xl"
                 ref={amountRef}
             >
                 <div>
                     <div className="flex items-center gap-5 mb-5">
-                        <div className="w-14 h-14 rounded-full flex items-center justify-center bg-black">
+                        <div className="flex items-center justify-center bg-black rounded-full w-14 h-14">
                             <img
-                                className="w-10 h-10 object-contain"
+                                className="object-contain w-10 h-10"
                                 alt=""
                                 src="/assets/images/mileston.png"
                             />
@@ -59,7 +59,7 @@ const SendMoneyWidget = () => {
                         <h3 className="text-lg font-semibold text-gray-800">Black Hoodie</h3>
                     </div>
                     {/* Amount and Currency */}
-                    <div className="grid grid-cols-4 items-center border rounded-lg px-4 py-2 mb-4 w-full">
+                    <div className="grid items-center w-full grid-cols-4 px-4 py-2 mb-4 border rounded-lg">
                         <div
                             className="col-span-3 text-lg font-semibold text-gray-800 focus:outline-none"
                             style={{ minHeight: '1.5rem' }}
@@ -69,7 +69,7 @@ const SendMoneyWidget = () => {
                         <select
                             value={currency}
                             onChange={(e) => setCurrency(e.target.value)}
-                            className="text-lg font-semibold text-gray-800 focus:outline-none bg-transparent ml-2"
+                            className="ml-2 text-lg font-semibold text-gray-800 bg-transparent focus:outline-none"
                         >
                             <option value="USDC">USDC</option>
                             <option value="USDT">USDT</option>
@@ -88,7 +88,7 @@ const SendMoneyWidget = () => {
                                     setMoneySent(true);
                                 }, 3000);
                             }}
-                            className="w-full bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition"
+                            className="w-full py-3 font-semibold text-white transition bg-black rounded-lg hover:bg-gray-800"
                         >
                             Pay with Mileston
                         </button>
@@ -107,13 +107,13 @@ const SendMoneyWidget = () => {
                     )}
 
                     {!sendingMilestoneMoney && (
-                        <button className="w-full bg-gray-100 text-black py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+                        <button className="w-full py-3 font-semibold text-black transition bg-gray-100 rounded-lg hover:bg-gray-100">
                             Pay with Wallet Connect
                         </button>
                     )}
                 </div>
 
-                <div className="flex gap-5 items-center justify-center text-sm text-gray-400">
+                <div className="flex items-center justify-center gap-5 text-sm text-gray-400">
                     <FontAwesomeIcon icon={faLock} />
                     <p>Secured Checkout Powered by Mileston</p>
                 </div>

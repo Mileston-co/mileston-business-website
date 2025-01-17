@@ -7,16 +7,19 @@ import Analytics from './home/Analytics'
 import Features from './home/Features'
 import CardFunctions from './home/CardFunctions'
 import CryptoCurrency from './home/CryptoCurrency'
-import { ScrollTriggeredAnimation } from '@/components/Animation';
+import { Globe } from './home/Globe'
+import StockSection from './home/StockSection'
 
 function Home() {
   return (
     <main className='container mx-auto'>
       <HeroSection />
       <SendMoneyForm />
+      <Globe />
       <Analytics />
       <Features />
       <CardFunctions />
+      <StockSection />
       <CryptoCurrency />
     </main>
   )
