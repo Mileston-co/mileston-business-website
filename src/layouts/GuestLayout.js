@@ -1,6 +1,6 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
-import Header from './Header'
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import Header from './Header';
 
 function GuestLayout() {
     return (
@@ -8,7 +8,7 @@ function GuestLayout() {
             <Header />
             <Outlet />
         </div>
-    )
+    );
 }
 
-export default GuestLayout
+export default GuestLayout;
