@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 const NAVIGATION_ITEMS = [
   { label: "Features", sectionId: "features" },
   { label: "Cards", sectionId: "cards" },
-  { label: "Stocks", sectionId: "stocks" },
+  { label: "Infrastructure", sectionId: "infrastructure" },
   { label: "Crypto", sectionId: "crypto" },
 ];
 
