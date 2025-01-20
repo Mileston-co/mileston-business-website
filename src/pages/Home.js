@@ -7,7 +7,6 @@ import Analytics from './home/Analytics'
 import Features from './home/Features'
 import CardFunctions from './home/CardFunctions'
 import CryptoCurrency from './home/CryptoCurrency'
-import { Globe } from './home/Globe'
 import StockSection from './home/StockSection'
 
 function Home() {
@@ -15,12 +14,19 @@ function Home() {
     <main className='container mx-auto'>
       <HeroSection />
       <SendMoneyForm />
-      <Globe />
       <Analytics />
-      <Features />
-      <CardFunctions />
-      <StockSection />
-      <CryptoCurrency />
+      <section id="features">
+        <Features />
+      </section>
+      <section id="cards">
+        <CardFunctions />
+      </section>
+      <section id="stocks">
+        <StockSection />
+      </section>
+      <section id="crypto">
+        <CryptoCurrency />
+      </section>
     </main>
   )
 }
