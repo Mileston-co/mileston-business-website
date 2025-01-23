@@ -20,7 +20,7 @@ function HeroSection() {
                             Crypto transactions made simple.
                         </h1>
                         <Text className="mx-5">
-                            Accept payments in with just 0.4% transaction fees. Make your business
+                            Accept payments with just 0.4% transaction fees. Make your business
                             future proof by accepting digital currencies.
                         </Text>
                     </BaseFramerAnimation>
