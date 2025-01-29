@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { Line } from 'react-chartjs-2';
 import {
     Chart as ChartJS,
@@ -13,7 +13,6 @@ import {
     Legend,
     Filler,
 } from 'chart.js';
-import gsap from 'gsap';
 
 ChartJS.register(
     CategoryScale,
@@ -36,7 +35,7 @@ const Analytics = () => {
         datasets: [
             {
                 label: 'Transaction Volume',
-                data: [30, 45, 57, 75, 85, 100],
+                data: [30, 45, 57, 75],
                 fill: true,
                 backgroundColor: 'rgba(79, 70, 229, 0.1)',
                 borderColor: 'rgba(79, 70, 229, 1)',
@@ -107,55 +106,11 @@ const Analytics = () => {
         { label: 'Success Rate', value: '99.9%', change: '+0.5%' },
     ];
 
-    useEffect(() => {
-        // Animate stats
-        const statCards = statsRef.current.children;
-        gsap.fromTo(
-            statCards,
-            { y: 20, opacity: 0 },
-            {
-                y: 0,
-                opacity: 1,
-                duration: 0.5,
-                stagger: 0.1,
-                ease: 'power2.out',
-            }
-        );
-
-        // Animate chart
-        gsap.fromTo(
-            chartRef.current,
-            { y: 20, opacity: 0 },
-            {
-                y: 0,
-                opacity: 1,
-                duration: 0.5,
-                delay: 0.3,
-                ease: 'power2.out',
-            }
-        );
-
-        // Animate features
-        const featureCards = featuresRef.current.children;
-        gsap.fromTo(
-            featureCards,
-            { y: 20, opacity: 0 },
-            {
-                y: 0,
-                opacity: 1,
-                duration: 0.5,
-                delay: 0.4,
-                stagger: 0.1,
-                ease: 'power2.out',
-            }
-        );
-    }, []);
-
     return (
-        <div className="p-8 space-y-8">
-            <div className="grid grid-cols-3 gap-6" ref={statsRef}>
+        <div className="p-4 md:p-8 space-y-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6" ref={statsRef}>
                 {stats.map((stat) => (
-                    <div key={stat.label} className="p-6 bg-gray-50 rounded-xl">
+                    <div key={stat.label} className="p-4 md:p-6 bg-gray-50 rounded-xl">
                         <p className="text-sm text-gray-600">{stat.label}</p>
                         <div className="flex items-baseline gap-2 mt-2">
                             <p className="text-2xl font-bold">{stat.value}</p>
@@ -165,30 +120,30 @@ const Analytics = () => {
                 ))}
             </div>
 
-            <div ref={chartRef} className="relative h-[400px] bg-white rounded-xl p-6">
-                <div className="absolute top-6 left-6">
+            <div ref={chartRef} className="relative h-[150px] md:h-[250px] bg-white rounded-xl px-4 pt-4 md:pt-6 md:px-6">
+                <div className="absolute top-4 md:top-6 left-4 md:left-6">
                     <h3 className="text-lg font-medium">Transaction Volume</h3>
                     <p className="text-sm text-gray-600">Last 6 months</p>
                 </div>
-                <div className="h-full pt-16">
+                <div className="h-full pt-12 md:pt-16">
                     <Line data={data} options={options} />
                 </div>
             </div>
 
-            <div ref={featuresRef} className="grid grid-cols-2 gap-6">
-                <div className="p-6 bg-gray-50 rounded-xl">
+            {/* <div ref={featuresRef} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="p-4 md:p-6 bg-gray-50 rounded-xl">
                     <h4 className="mb-2 text-lg font-medium">Real-time Monitoring</h4>
                     <p className="text-sm text-gray-600">
                         Track transactions and user activity in real-time with detailed analytics
                     </p>
                 </div>
-                <div className="p-6 bg-gray-50 rounded-xl">
+                <div className="p-4 md:p-6 bg-gray-50 rounded-xl">
                     <h4 className="mb-2 text-lg font-medium">Smart Insights</h4>
                     <p className="text-sm text-gray-600">
                         AI-powered insights to help you optimize your payment flows
                     </p>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 };

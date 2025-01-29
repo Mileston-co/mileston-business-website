@@ -1,7 +1,5 @@
-import { faCoins } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import Text from '../../components/Text';
-import Badge from '../../components/Badge';
 import Title from '../../components/Title';
 import Button from '../../components/Button';
 import Link from 'next/link';

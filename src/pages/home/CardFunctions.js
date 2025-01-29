@@ -30,7 +30,7 @@ function CardFunctions() {
     ];
 
     return (
-        <section className="relative flex flex-col items-center px-10 py-10 mx-8 bg-black rounded-2xl">
+        <section className="relative mt-24 flex flex-col items-center px-10 py-10 mx-8 bg-black rounded-2xl">
             <div className="absolute inset-0 w-full h-full dark:bg-grid-white/[0.2] bg-grid-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white_35%,transparent_75%)]"></div>
             <div className="flex flex-col items-center section-container gap-8 !my-0 relative z-10">
                 <ScrollTriggeredAnimation>

@@ -1,9 +1,8 @@
 import React from 'react';
 import Card from '../../components/Card';
-import ReactCountryFlag from 'react-country-flag';
 import ProgressBar from '../../components/ProgressBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBagShopping, faChartLine, faPlane, faShop } from '@fortawesome/free-solid-svg-icons';
+import { faBagShopping, faPlane, faShop } from '@fortawesome/free-solid-svg-icons';
 import Text from '../../components/Text';
 import SubHeading from '../../components/SubHeading';
 import { ScrollTriggeredAnimation } from '@/components/Animation';
@@ -81,9 +80,8 @@ function Analytics() {
                                         minWidth: '2.2em',
                                         height: '2.2em',
                                     }}
-                                    className={`flex justify-center items-center rounded-full ${
-                                        processor.milestone ? 'bg-black' : 'bg-gray-200'
-                                    }`}
+                                    className={`flex justify-center items-center rounded-full ${processor.milestone ? 'bg-black' : 'bg-gray-200'
+                                        }`}
                                 >
                                     {processor.milestone ? (
                                         <Image
@@ -93,9 +91,8 @@ function Analytics() {
                                         />
                                     ) : (
                                         <FontAwesomeIcon
-                                            className={`${
-                                                processor.milestone ? 'text-gray-200' : 'text-black'
-                                            }`}
+                                            className={`${processor.milestone ? 'text-gray-200' : 'text-black'
+                                                }`}
                                             icon={processor.icon}
                                         />
                                     )}
@@ -118,7 +115,7 @@ function Analytics() {
             <Feature
                 title={'Easy Integration'}
                 description={
-                    'Easily integrate crypto checkout with our robust APIs and start accepting payments immediately.'
+                    'Easily integrate crypto checkout with our robust APIs to start accepting payments.'
                 }
             >
                 <ScrollTriggeredAnimation>
@@ -136,7 +133,7 @@ function Analytics() {
                             }} className='flex items-center justify-center bg-black rounded-full'>
                                 <FontAwesomeIcon className='text-gray-200' icon={faChartLine} />
                             </div>
-                            <div className='inline-flex flex-col justify-start gap-2'>
+                            <div className='</div>inline-flex flex-col justify-start gap-2'>
                                 <div className='flex items-start gap-2'>
                                     <p className='text-lg font-bold'>$290,120.99</p>
                                     <span className='px-1 text-xs bg-gray-200'>+9%</span>
@@ -150,7 +147,7 @@ function Analytics() {
                                 width: '3em',
                                 height: '3em',
                             }} className='flex items-center justify-center bg-black rounded-full'>
-                                <FontAwesomeIcon className='text-gray-200' icon={faChartLine} />
+         </div>                       <FontAwesomeIcon className='text-gray-200' icon={faChartLine} />
                             </div>
 
                             <div className='inline-flex flex-col justify-start gap-2'>
@@ -170,7 +167,7 @@ function Analytics() {
             <Feature
                 title={'Volatility Protection'}
                 description={
-                    "Get volatility protection by Mileston's auto USDC convert feature. You'll always receive USDC."
+                    "With Mileston's auto USDC convert feature. You'll always receive USDC."
                 }
             >
                 <ScrollTriggeredAnimation>

@@ -11,7 +11,7 @@ function HeroSection() {
     // };
 
     return (
-        <section className="bg-black text-white pt-24 mx-8 rounded-3xl px-12 !mt-20 lg:!mt-10">
+        <section className="bg-black text-white pt-24 mx-8 rounded-3xl px-12 mt-32">
             <div className="container mx-auto flex flex-col items-center justify-center text-center">
                 {/* linear gradient from left to right with white to light gray */}
                 <div className="max-w-lg w-full flex flex-col gap-5 lg:gap-8 items-center">

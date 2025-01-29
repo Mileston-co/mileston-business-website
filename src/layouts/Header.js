@@ -2,13 +2,8 @@
 
 // src/components/Header.js
 import React, { useState, useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import Logo from './../components/Logo';
 import RightActions from './RightActions';
-
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const NAVIGATION_ITEMS = [
     { label: 'Features', sectionId: 'features' },
@@ -26,63 +21,6 @@ const Header = () => {
     const containerRef = useRef(null);
     const navRef = useRef(null);
 
-    const scrollToSection = (sectionId) => {
-        const section = document.getElementById(sectionId);
-        if (section) {
-            gsap.to(window, {
-                duration: 1,
-                scrollTo: { y: section, offsetY: 100 },
-                ease: 'power2.inOut',
-            });
-        }
-    };
-
-    useEffect(() => {
-        // Initial animation for header elements
-        gsap.fromTo(
-            containerRef.current,
-            { y: -100, opacity: 0 },
-            {
-                y: 0,
-                opacity: 1,
-                duration: 0.8,
-                ease: 'elastic.out(1, 0.75)',
-            }
-        );
-
-        gsap.fromTo(
-            [logoRef.current, navRef.current, actionsRef.current],
-            { y: -20, opacity: 0 },
-            {
-                y: 0,
-                opacity: 1,
-                duration: 0.5,
-                delay: 0.3,
-                stagger: 0.1,
-                ease: 'power2.out',
-            }
-        );
-
-        // Create scroll triggers for each section
-        NAVIGATION_ITEMS.forEach(({ sectionId }) => {
-            ScrollTrigger.create({
-                trigger: `#${sectionId}`,
-                start: 'top center',
-                end: 'bottom center',
-                onToggle: (self) => {
-                    if (self.isActive) {
-                        setActiveSection(sectionId);
-                    }
-                },
-            });
-        });
-
-        // Cleanup
-        return () => {
-            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-        };
-    }, []);
-
     return (
         <header
             ref={headerRef}
@@ -97,11 +35,11 @@ const Header = () => {
                         : 'bg-white/50 backdrop-blur-sm'
                 }`}
             >
-                <div ref={logoRef} className="col-span-3">
+                <div ref={logoRef} className="col-span-6 lg:col-span-3 mb-4 lg:mb-0">
                     <Logo />
                 </div>
 
-                <nav ref={navRef} className="flex justify-center col-span-6 gap-6">
+                <nav ref={navRef} className="hidden lg:flex justify-center col-span-6 gap-6">
                     {NAVIGATION_ITEMS.map(({ label, sectionId }) => (
                         <button
                             key={sectionId}
@@ -120,7 +58,7 @@ const Header = () => {
                     ))}
                 </nav>
 
-                <div ref={actionsRef} className="flex justify-end col-span-3">
+                <div ref={actionsRef} className="flex justify-end ml-4 lg:ml-0 col-span-6 lg:col-span-3 lg:mt-0">
                     <RightActions />
                 </div>
             </div>

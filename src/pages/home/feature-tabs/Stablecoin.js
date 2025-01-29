@@ -8,7 +8,6 @@ import {
     faShieldHalved,
     faGlobe,
 } from '@fortawesome/free-solid-svg-icons';
-import gsap from 'gsap';
 
 const Stablecoin = () => {
     const [amount, setAmount] = useState('1000');
@@ -42,58 +41,6 @@ const Stablecoin = () => {
             description: 'Exchange stablecoins from anywhere in the world',
         },
     ];
-
-    useEffect(() => {
-        // Animate exchange widget
-        gsap.fromTo(
-            exchangeRef.current,
-            { y: 20, opacity: 0 },
-            {
-                y: 0,
-                opacity: 1,
-                duration: 0.5,
-                ease: 'power2.out',
-            }
-        );
-
-        // Animate stablecoin list
-        const coinCards = coinsRef.current.children;
-        gsap.fromTo(
-            coinCards,
-            { y: 20, opacity: 0 },
-            {
-                y: 0,
-                opacity: 1,
-                duration: 0.5,
-                stagger: 0.1,
-                delay: 0.2,
-                ease: 'power2.out',
-            }
-        );
-
-        // Animate features
-        const featureCards = featuresRef.current.children;
-        gsap.fromTo(
-            featureCards,
-            { y: 20, opacity: 0 },
-            {
-                y: 0,
-                opacity: 1,
-                duration: 0.5,
-                stagger: 0.1,
-                delay: 0.4,
-                ease: 'power2.out',
-            }
-        );
-
-        // Animate arrow rotation
-        const arrowIcon = document.querySelector('.exchange-arrow');
-        gsap.to(arrowIcon, {
-            rotation: 360,
-            duration: 0.5,
-            ease: 'power2.out',
-        });
-    }, []);
 
     return (
         <div className="p-8 space-y-8">
