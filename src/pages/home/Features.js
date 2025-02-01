@@ -11,16 +11,16 @@ import Checkout from './feature-tabs/Checkout';
 const GlobeComp = () => {
     return (
       <div className="flex flex-col items-center my-10">
-        {/* Container div (no animation here) */}
+        {/* Container div with fixed size */}
         <div className="relative w-64 h-64"> {/* Adjust size as needed */}
           {/* Animated image only */}
           <img
             src='/assets/images/earth.png'
             alt='earth'
-            className='animate-spin-custom w-full h-full object-contain rounded-full shadow-emerald-800'
+            className='animate-spin-custom w-80 h-80 object-contain rounded-full shadow-emerald-800'
           />
         </div>
-        <p className="caption mt-10 font-bold">Worldwide coverage, we support 180+ countries</p>
+        <p className="caption mt-14 font-bold">Worldwide coverage, we support 180+ countries</p>
       </div>
     );
   };

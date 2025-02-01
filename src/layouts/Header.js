@@ -7,9 +7,7 @@ import RightActions from './RightActions';
 
 const NAVIGATION_ITEMS = [
     { label: 'Features', sectionId: 'features' },
-    { label: 'Cards', sectionId: 'cards' },
-    { label: 'Infrastructure', sectionId: 'infrastructure' },
-    { label: 'Crypto', sectionId: 'crypto' },
+    { label: 'Docs', url: 'https://docs.mileston.co' },
 ];
 
 const Header = () => {
@@ -20,6 +18,13 @@ const Header = () => {
     const actionsRef = useRef(null);
     const containerRef = useRef(null);
     const navRef = useRef(null);
+
+    const scrollToSection = (sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
     return (
         <header
@@ -40,10 +45,10 @@ const Header = () => {
                 </div>
 
                 <nav ref={navRef} className="hidden lg:flex justify-center col-span-6 gap-6">
-                    {NAVIGATION_ITEMS.map(({ label, sectionId }) => (
+                    {NAVIGATION_ITEMS.map(({ label, sectionId, url }) => (
                         <button
-                            key={sectionId}
-                            onClick={() => scrollToSection(sectionId)}
+                            key={sectionId || url}
+                            onClick={() => sectionId ? scrollToSection(sectionId) : window.open(url, '_blank')}
                             className={`text-sm font-medium transition-all duration-300 relative ${
                                 activeSection === sectionId
                                     ? 'text-black'

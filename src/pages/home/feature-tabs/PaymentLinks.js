@@ -37,8 +37,29 @@ const PaymentLinks = () => {
     return (
         <div className="p-4 md:p-8 space-y-8">
 
+            {/* Demo Section */}
+            <div ref={demoRef} className="p-4 md:p-6 bg-gray-50 rounded-xl">
+                <div className="flex flex-col md:flex-row items-center justify-between p-4 bg-white border border-gray-100 rounded-lg link-content">
+                    <div className="flex items-center gap-3 mb-4 md:mb-0">
+                        <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-50">
+                            <FontAwesomeIcon icon={faLink} className="text-indigo-600" />
+                        </div>
+                        <span className="text-sm font-medium">{demoLink}</span>
+                    </div>
+                    <button
+                        onClick={handleCopy}
+                        className="p-2 transition-colors rounded-lg hover:bg-gray-50"
+                    >
+                        <FontAwesomeIcon
+                            icon={copied ? faCheck : faCopy}
+                            className={copied ? 'text-green-500' : 'text-gray-400'}
+                        />
+                    </button>
+                </div>
+            </div>
+
             {/* Features Grid */}
-            {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" ref={featuresRef}>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" ref={featuresRef}>
                 {features.map((feature) => (
                     <div
                         key={feature.title}
@@ -48,9 +69,9 @@ const PaymentLinks = () => {
                         <p className="text-sm text-gray-600">{feature.description}</p>
                     </div>
                 ))}
-            </div> */}
+            </div>
 
-            {/* Usage Example */}
+            {/* Usage Example
             <div ref={integrationRef} className="p-4 md:p-6 bg-gray-50 rounded-xl">
                 <h3 className="mb-4 text-lg font-medium">Quick Integration</h3>
                 <div className="p-4 bg-gray-900 rounded-lg overflow-x-auto">
@@ -70,28 +91,8 @@ const PaymentLinks = () => {
                         &#125;);
                     </code>
                 </div>
-            </div>
+            </div> */}
 
-                        {/* Demo Section */}
-                        <div ref={demoRef} className="p-4 md:p-6 bg-gray-50 rounded-xl">
-                <div className="flex flex-col md:flex-row items-center justify-between p-4 bg-white border border-gray-100 rounded-lg link-content">
-                    <div className="flex items-center gap-3 mb-4 md:mb-0">
-                        <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-50">
-                            <FontAwesomeIcon icon={faLink} className="text-indigo-600" />
-                        </div>
-                        <span className="text-sm font-medium">{demoLink}</span>
-                    </div>
-                    <button
-                        onClick={handleCopy}
-                        className="p-2 transition-colors rounded-lg hover:bg-gray-50"
-                    >
-                        <FontAwesomeIcon
-                            icon={copied ? faCheck : faCopy}
-                            className={copied ? 'text-green-500' : 'text-gray-400'}
-                        />
-                    </button>
-                </div>
-            </div>
         </div>
     );
 };
