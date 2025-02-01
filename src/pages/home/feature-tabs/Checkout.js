@@ -46,7 +46,7 @@ const Checkout = () => {
                 ref={checkoutRef}
                 className="overflow-hidden bg-white border border-gray-100 rounded-xl"
             >
-                <div className="p-4 md:p-6 border-b border-gray-100">
+                <div className="p-1 md:p-6 border-b border-gray-100">
                     <div className="flex flex-col md:flex-row items-center justify-between">
                         <div className="flex items-center gap-3">
                             <div className="flex items-center justify-center w-10 h-10 bg-black rounded-lg">
