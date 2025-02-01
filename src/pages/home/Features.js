@@ -26,12 +26,12 @@ const GlobeComp = () => {
   };
 
 const FEATURE_TABS = [
-    {
-        id: 'globe',
-        title: 'Global Coverage',
-        component: GlobeComp,
-        description: 'Send money anywhere in the world instantly with our global payment network',
-    },
+    // {
+    //     id: 'globe',
+    //     title: 'Global Coverage',
+    //     component: GlobeComp,
+    //     description: 'Send money anywhere in the world instantly with our global payment network',
+    // },
     {
         id: 'analytics',
         title: 'Smart Analytics',
