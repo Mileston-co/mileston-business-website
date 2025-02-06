@@ -25,11 +25,14 @@ function HeroSection() {
                         </Text>
                     </BaseFramerAnimation>
                     <BaseFramerAnimation>
-                        <Link href="https://cal.com/ahmedrza" target="_blank">
-                            <Button type="button" color="white">
-                                Schedule a Demo
-                            </Button>
-                        </Link>
+                        <div className="flex flex-col ld:flex-row items-center justify-center gap-6">
+                            <Link href="https://cal.com/ahmedrza" color='white' target="_blank">
+                                <Button>Schedule a Demo</Button>
+                            </Link>
+                            <Link href="https://business.mileston.co" target="_blank">
+                                <Button>Sign Up</Button>
+                            </Link>
+                        </div>
                     </BaseFramerAnimation>
                 </div>
                 <BaseFramerAnimation>
