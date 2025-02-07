@@ -23,12 +23,12 @@ export default function SignupForm() {
                     window.open("https://business.mileston.co/auth/verify-code", "_blank");
                 } else {
                     setError("Unable to sign up");
-                    // window.location.href = "https://business.mileston.co";
+                    window.location.href = "https://business.mileston.co";
                 }
             })
             .catch(() => {
                 setError("Unable to sign up");
-                // window.location.href = "https://business.mileston.co";
+                window.location.href = "https://business.mileston.co";
             });
         } else {
             setError("Please enter a valid work email");

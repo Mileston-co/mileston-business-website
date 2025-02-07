@@ -46,6 +46,7 @@ export const ScrollTriggeredAnimation = ({
             id={id}
             style={style}
             {...props}
+            viewport={{ once: true }}
         >
             {children}
         </motion.div>
