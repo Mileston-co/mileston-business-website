@@ -20,9 +20,6 @@ function CryptoCurrency() {
                         <Link href="https://cal.com/ahmedrza" target="_blank">
                             <Button>Schedule a Demo</Button>
                         </Link>
-                        <Link href="https://business.mileston.co" color='white' target="_blank">
-                            <Button>Sign Up</Button>
-                        </Link>
                     </div>
 
                 </div>

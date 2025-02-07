@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Button from '../../components/Button';
 import Text from '../../components/Text';
 import { BaseFramerAnimation } from '@/components/Animation';
+import SignUpForm from '@/components/SignupForm';
 
 function HeroSection() {
     // const [isBusiness, setIsBusiness] = useState(false);
@@ -24,15 +25,10 @@ function HeroSection() {
                             future proof by accepting digital currencies.
                         </Text>
                     </BaseFramerAnimation>
+                </div>
+                <div className="flex flex-col items-center mt-5">
                     <BaseFramerAnimation>
-                        <div className="flex flex-col ld:flex-row items-center justify-center gap-6">
-                            <Link href="https://cal.com/ahmedrza" color='white' target="_blank">
-                                <Button>Schedule a Demo</Button>
-                            </Link>
-                            <Link href="https://business.mileston.co" target="_blank">
-                                <Button>Sign Up</Button>
-                            </Link>
-                        </div>
+                        <SignUpForm />
                     </BaseFramerAnimation>
                 </div>
                 <BaseFramerAnimation>
