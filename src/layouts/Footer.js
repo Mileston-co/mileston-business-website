@@ -19,7 +19,7 @@ export default function Footer() {
                                     <span className="sr-only">Telegram</span>
                                 </Link>
                                 <Link
-                                    href="https://x.com/mileston_sol"
+                                    href="https://x.com/mileston_co"
                                     target="_blank"
                                     className="text-muted-foreground p-3 bg-white rounded-xl hover:text-foreground"
                                 >
