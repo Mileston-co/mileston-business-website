@@ -9,7 +9,7 @@ import { ScrollTriggeredAnimation } from '@/components/Animation';
 import { faPaypal, faSquarespace, faStripe } from '@fortawesome/free-brands-svg-icons';
 import Image from 'next/image';
 import VolatilityProtection from '../../assets/images/volatility-protection.png';
-import EasyIntegration from '../../assets/images/easy-integration.jpg';
+import EasyIntegration from '../../assets/images/easy-integration.png';
 import MilestonLogoWhite from '../../assets/images/logo-white.png';
 
 function Analytics() {

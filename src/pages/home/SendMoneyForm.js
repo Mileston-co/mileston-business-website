@@ -9,8 +9,8 @@ function SendMoneyForm() {
     return (
         <section className="section-container flex flex-col  items-center">
             <ScrollTriggeredAnimation>
-                <div className="w-full max-w-4xl flex flex-col  items-center gap-5 lg:gap-8">
-                    <Title>Efficiency at its best: Mileston&apos;s daily finance</Title>
+                <div className="w-full max-w-4xl flex flex-col items-center gap-5 lg:gap-8">
+                    <Title>Efficiency at its best</Title>
                     <Text>Empowering global crypto transactions</Text>
                 </div>
             </ScrollTriggeredAnimation>
