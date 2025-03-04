@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import Link from "next/link";
 
@@ -36,34 +37,32 @@ export default function SignupForm() {
     };
 
     return (
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-5 bg-black p-6">
-            {/* Left side: Input field and error message */}
-            <div className="flex flex-col w-full md:w-auto">
-                <div className="relative w-full md:w-80">
-                    <input
-                        type="email"
-                        placeholder="Enter your work email"
-                        className="w-full px-2 md:px-5 py-3 pr-20 text-white bg-gray-900 border border-gray-700 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-500"
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                    <button 
-                        className="absolute right-0 top-0 h-full px-3 md:px-6 text-white bg-gray-700 hover:bg-gray-600 transition-all rounded-full"
-                        onClick={handleSignup}
-                    >
-                        Signup
-                    </button>
-                </div>
-
-                {/* Error Message Below Input */}
-                {error && <p className="mt-2 text-red-400 text-sm">{error}</p>}
+        <div className="flex flex-col md:flex-row justify-center items-center w-full gap-6">
+            {/* Input Field */}
+            <div className="relative w-full md:w-96">
+                <input
+                    type="email"
+                    placeholder="Enter your work email"
+                    className="w-full px-5 py-3 pr-28 text-black bg-white border border-gray-600 rounded-full outline-none"
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+                <button 
+                    className="absolute right-1 top-[0.15rem] h-[90%] px-4 md:px-6 text-white bg-black hover:bg-gray-950 transition-all rounded-full"
+                    onClick={handleSignup}
+                >
+                    Sign Up
+                </button>
             </div>
 
-            {/* "Schedule a Demo" Button */}
+            {/* Error Message */}
+            {error && <p className="text-red-400 text-sm mt-2">{error}</p>}
+
+            {/* Schedule a Demo Button */}
             <Link 
                 href="https://cal.com/ahmedrza" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="px-6 py-3 text-white border border-white rounded-full hover:bg-white hover:text-black transition-all"
+                className="px-6 py-3 text-white hidden bg-transparent border border-white rounded-full hover:bg-white hover:text-black transition-all"
             >
                 Schedule a Demo
             </Link>

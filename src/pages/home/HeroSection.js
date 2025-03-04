@@ -26,11 +26,6 @@ function HeroSection() {
                         </Text>
                     </BaseFramerAnimation>
                 </div>
-                <div className="flex flex-col items-center mt-5">
-                    <BaseFramerAnimation>
-                        <SignUpForm />
-                    </BaseFramerAnimation>
-                </div>
                 <BaseFramerAnimation>
                     <img
                         src={'/assets/images/dashboard-hero.png'}
