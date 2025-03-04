@@ -29,7 +29,7 @@ function CryptoCurrency() {
                 <div className="pr-10">
                     <img
                         className="w-full max-w-4xl"
-                        src="/assets/images/crypto-currency-image.png"
+                        src="/assets/images/globe2.png"
                         alt="Crypto Currency"
                     />
                 </div>

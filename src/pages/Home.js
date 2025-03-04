@@ -7,6 +7,7 @@ import Analytics from './home/Analytics';
 import Features from './home/Features';
 import CardFunctions from './home/CardFunctions';
 import CryptoCurrency from './home/CryptoCurrency';
+import Testimonials from './home/Testimonials';
 
 function Home() {
     return (
@@ -14,6 +15,7 @@ function Home() {
             <HeroSection />
             <SendMoneyForm />
             <Analytics />
+            <Testimonials />
             <section id="features">
                 <Features />
             </section>
