@@ -7,16 +7,17 @@ import { ScrollTriggeredAnimation } from '@/components/Animation';
 
 function CryptoCurrency() {
     return (
-        <section className="section-container grid grid-cols-1 lg:grid-cols-2 gap-20">
+<section className="section-container grid grid-cols-1 lg:grid-cols-2 gap-20 min-h-screen items-center w-full">
             <ScrollTriggeredAnimation>
-                <div className="flex flex-col justify-center gap-8 items-start pr-40">
+            <div className="flex flex-col justify-center gap-8 items-start sm:items-center text-center lg:items-start lg:text-left">
+
                     {/* <Badge icon={faCoins}>Account Transfer</Badge> */}
-                    <Title className="text-start">Join the DeFi revolution with Mileston</Title>
-                    <Text className="lg:text-lg">
+                    <Title className="sm:text-start text-center w-full">Join the DeFi revolution with Mileston</Title>
+                    <Text className="lg:text-lg text-center self-center sm:self-start">
                         Borderless transactions made simple for everyone
                     </Text>
 
-                    <div className="flex flex-col ld:flex-row items-center justify-center gap-6">
+                    <div className="flex flex-col ld:flex-row self-center sm:self-start justify-center gap-6">
                         <Link href="https://cal.com/ahmedrza" target="_blank">
                             <Button>Schedule a Demo</Button>
                         </Link>
@@ -26,10 +27,10 @@ function CryptoCurrency() {
             </ScrollTriggeredAnimation>
 
             <ScrollTriggeredAnimation>
-                <div className="pr-10">
+                <div className="pr-0 sm:pr-10">
                     <img
-                        className="w-full max-w-4xl"
-                        src="/assets/images/crypto-currency-image.png"
+                        className="w-[85%] max-w-4xl md:ml-20 ml-10 animate-spin_slow"
+                        src="/assets/images/globe2.png"
                         alt="Crypto Currency"
                     />
                 </div>

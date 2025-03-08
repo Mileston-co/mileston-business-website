@@ -101,9 +101,9 @@ const Analytics = () => {
     };
 
     const stats = [
-        { label: 'Monthly Volume', value: '$2.5M', change: '+25%' },
-        { label: 'Active Users', value: '15.2K', change: '+12%' },
-        { label: 'Success Rate', value: '99.9%', change: '+0.5%' },
+        { label: 'Total Revenue', value: '$2.5M', change: '+25%' },
+        { label: 'Subscription', value: '15.2K', change: '+12%' },
+        { label: 'Success Rate', value: '99.9%', change: '+0.0%' },
     ];
 
     return (

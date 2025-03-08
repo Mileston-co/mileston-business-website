@@ -41,6 +41,9 @@ module.exports = {
     ],
     theme: {
         extend: {
+            animation: {
+                spin_slow: 'spin 10s linear infinite',
+              },
             borderRadius: {
                 lg: 'var(--radius)',
                 md: 'calc(var(--radius) - 2px)',
