@@ -29,7 +29,7 @@ function CryptoCurrency() {
             <ScrollTriggeredAnimation>
                 <div className="pr-0 sm:pr-10">
                     <img
-                        className="w-[100%] max-w-4xl"
+                        className="w-[85%] max-w-4xl md:ml-20 ml-10 animate-spin_slow"
                         src="/assets/images/globe2.png"
                         alt="Crypto Currency"
                     />
