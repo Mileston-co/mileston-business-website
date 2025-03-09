@@ -43,7 +43,7 @@ export default function SignupForm() {
                 <input
                     type="email"
                     placeholder="Enter your work email"
-                    className="w-full px-5 py-3 pr-28 text-black bg-white border border-gray-600 rounded-full outline-none"
+                    className="w-full px-5 py-3 pr-28 text-black bg-gray-300 border border-gray-600 rounded-full outline-none"
                     onChange={(e) => setEmail(e.target.value)}
                 />
                 <button 
