@@ -30,7 +30,7 @@ function CryptoCurrency() {
                 <div className="pr-0 sm:pr-10">
                     <img
                         className="w-[85%] max-w-4xl md:ml-20 ml-10 animate-spin_slow"
-                        src="../../assets/images/globe2.png"
+                        src="/assets/images/crypto-currency-image.png"
                         alt="Crypto Currency"
                     />
                 </div>
