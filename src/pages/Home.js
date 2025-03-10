@@ -15,7 +15,7 @@ function Home() {
             <HeroSection />
             <SendMoneyForm />
             <Analytics />
-            <Testimonials />
+            {/* <Testimonials /> */}
             <section id="features">
                 <Features />
             </section>
