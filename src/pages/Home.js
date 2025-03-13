@@ -7,13 +7,15 @@ import Analytics from './home/Analytics';
 import Features from './home/Features';
 import CardFunctions from './home/CardFunctions';
 import CryptoCurrency from './home/CryptoCurrency';
-import Testimonials from './home/Testimonials';
+// import Testimonials from './home/Testimonials';
 
 function Home() {
     return (
         <main className="container mx-auto">
             <HeroSection />
+            <section id="sendMoneyForm">
             <SendMoneyForm />
+            </section>
             <Analytics />
             {/* <Testimonials /> */}
             <section id="features">
