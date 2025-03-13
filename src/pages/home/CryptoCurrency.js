@@ -12,7 +12,7 @@ function CryptoCurrency() {
             <div className="flex flex-col justify-center gap-8 items-start sm:items-center text-center lg:items-start lg:text-left">
 
                     {/* <Badge icon={faCoins}>Account Transfer</Badge> */}
-                    <Title className="sm:text-start text-center w-full">Join the DeFi revolution with Mileston</Title>
+                    <Title className="sm:text-start text-center w-full">Start accepting digital currencies today</Title>
                     <Text className="lg:text-lg text-center self-center sm:self-start">
                         Borderless transactions made simple for everyone
                     </Text>
