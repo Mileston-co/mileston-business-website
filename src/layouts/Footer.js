@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { FaTelegram, FaTwitter, FaDiscord } from 'react-icons/fa';
 import SignUpForm from '@/components/SignupForm';
+import Logo from "./../components/Logo";
 
 const FOOTER_LINKS = [
   { label: 'Features', url: '#features' },
@@ -19,7 +20,9 @@ export default function Footer() {
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {/* Brand Name & Socials */}
               <div>
-                <div className="text-xl font-bold">MILESTON</div>
+                <div className="text-xl font-bold">
+                  <Logo />
+                </div>
                 <p className="text-sm text-gray-600 mt-2">
                   Revolutionizing payments with secure and low-cost crypto transactions.
                 </p>
