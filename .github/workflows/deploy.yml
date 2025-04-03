@@ -1,42 +1,40 @@
-name: Deploy to AWS ECR
+name: Deploy to Azure Container Registry (ACR)
 
 on:
-    push:
-        branches:
-            - main
+  push:
+    branches:
+      - main
 
 jobs:
-    deploy:
-        runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v2
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-            # Configure AWS credentials using GitHub secrets
-            - name: Configure AWS credentials
-              uses: aws-actions/configure-aws-credentials@v2
-              with:
-                  aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-                  aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-                  aws-region: ${{ secrets.AWS_REGION }}
+      # Azure Login using Azure CLI
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }} # Store service principal credentials as a secret
 
-            # Log in to ECR
-            - name: Login to Amazon ECR
-              run: |
-                  aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin 676206932988.dkr.ecr.us-east-1.amazonaws.com
+      # Login to Azure Container Registry (ACR)
+      - name: Login to ACR
+        run: |
+          az acr login --name ${{ secrets.ACR_NAME }}
 
-            # Build the Docker image
-            - name: Build Docker image
-              run: |
-                  docker build -t mileston-landing:latest .
+      # Build the Docker image
+      - name: Build Docker image
+        run: |
+          docker build --no-cache -t mileston-landing:latest .
 
-            # Tag the image for ECR
-            - name: Tag Docker image
-              run: |
-                  docker tag mileston-landing:latest ${{ secrets.AWS_ECR_REPOSITORY }}:latest
+      # Tag the image for ACR
+      - name: Tag Docker image
+        run: |
+          docker tag mileston-landing:latest ${{ secrets.ACR_NAME }}.azurecr.io/${{ secrets.ACR_REPOSITORY }}:latest
 
-            # Push the image to ECR
-            - name: Push Docker image
-              run: |
-                  docker push ${{ secrets.AWS_ECR_REPOSITORY }}:latest
+      # Push the image to ACR
+      - name: Push Docker image
+        run: |
+          docker push ${{ secrets.ACR_NAME }}.azurecr.io/${{ secrets.ACR_REPOSITORY }}:latest
