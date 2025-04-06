@@ -1,5 +1,6 @@
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Script from 'next/script';
+import clarity from 'clarity-js';
 
 import Footer from '@/layouts/Footer';
 import './globals.css';
@@ -12,6 +13,8 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+    clarity.start({ projectId: 'qxbsz4q3bp' });
+
     return (
         <html lang="en">
             <Script id="show-banner">
