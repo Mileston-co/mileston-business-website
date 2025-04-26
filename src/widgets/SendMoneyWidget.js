@@ -90,7 +90,7 @@ const SendMoneyWidget = () => {
                             }}
                             className="w-full py-3 font-semibold text-white transition bg-black rounded-lg hover:bg-gray-800"
                         >
-                            Pay with Mileston
+                            Pay with Wallet Connect
                         </button>
                     )}
 

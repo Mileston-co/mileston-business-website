@@ -20,6 +20,18 @@ const GlobeVisualization = () => {
         controls.autoRotateSpeed = 0.6;
         controls.enableZoom = false;
 
+        // Enable rotation only for medium screens or larger
+        const handleResize = () => {
+            if (window.innerWidth < 768) {
+                controls.enableRotate = false;
+            } else {
+                controls.enableRotate = true;
+            }
+        };
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+
         const points = [
             { lat: 51.5, lng: -0.1, text: 'London' },
             { lat: 35.6, lng: 139.6, text: 'Tokyo' },
@@ -53,6 +65,10 @@ const GlobeVisualization = () => {
             .labelDotRadius(0.4)
             .labelColor(() => '#facc15')
             .labelAltitude(0.01);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     }, []);
 
     return <div ref={globeRef} className="w-full h-full" />;
