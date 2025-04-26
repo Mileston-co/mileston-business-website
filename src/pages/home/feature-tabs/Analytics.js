@@ -28,22 +28,33 @@ ChartJS.register(
 const Analytics = () => {
     const statsRef = useRef();
     const chartRef = useRef();
-    const featuresRef = useRef();
+
+    const gradientBackground = (ctx) => {
+        const chart = ctx.chart;
+        const { ctx: canvasCtx, chartArea } = chart;
+
+        if (!chartArea) return null;
+
+        const gradient = canvasCtx.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
+        gradient.addColorStop(0, 'rgba(99, 102, 241, 0.4)');
+        gradient.addColorStop(1, 'rgba(99, 102, 241, 0.05)');
+        return gradient;
+    };
 
     const data = {
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
         datasets: [
             {
                 label: 'Transaction Volume',
-                data: [30, 45, 57, 75],
+                data: [30, 57, 70, 90],
                 fill: true,
-                backgroundColor: 'rgba(79, 70, 229, 0.1)',
-                borderColor: 'rgba(79, 70, 229, 1)',
+                backgroundColor: (ctx) => gradientBackground(ctx),
+                borderColor: 'rgba(99, 102, 241, 1)',
                 tension: 0.4,
                 pointRadius: 0,
                 pointHoverRadius: 6,
-                pointHoverBackgroundColor: 'rgba(79, 70, 229, 1)',
-                pointHoverBorderColor: 'white',
+                pointHoverBackgroundColor: '#4F46E5',
+                pointHoverBorderColor: '#fff',
                 pointHoverBorderWidth: 2,
             },
         ],
@@ -54,46 +65,45 @@ const Analytics = () => {
         maintainAspectRatio: false,
         plugins: {
             legend: {
-                display: false,
+                display: true,
+                position: 'top',
+                labels: {
+                    font: {
+                        size: 14,
+                        weight: '500',
+                    },
+                    color: '#4B5563',
+                },
             },
             tooltip: {
-                backgroundColor: 'white',
-                titleColor: 'black',
-                bodyColor: 'black',
-                borderColor: 'rgba(0,0,0,0.1)',
+                backgroundColor: '#fff',
+                titleColor: '#111827',
+                bodyColor: '#1F2937',
+                borderColor: '#E5E7EB',
                 borderWidth: 1,
                 padding: 12,
                 displayColors: false,
-                callbacks: {
-                    label: function (context) {
-                        return `$${context.parsed.y}K`;
-                    },
-                },
+                titleFont: { weight: '600' },
             },
         },
         scales: {
             x: {
-                grid: {
-                    display: false,
-                },
+                grid: { display: false },
                 ticks: {
-                    font: {
-                        family: 'Nokora Regular',
-                        size: 12,
-                    },
+                    color: '#6B7280',
+                    font: { size: 12 },
                 },
             },
             y: {
                 grid: {
                     color: 'rgba(0,0,0,0.05)',
+                    borderDash: [5, 5],
                 },
                 ticks: {
-                    font: {
-                        family: 'Nokora Regular',
-                        size: 12,
-                    },
+                    color: '#6B7280',
+                    font: { size: 12 },
                     callback: function (value) {
-                        return '$' + value + 'K';
+                        return `$${value}K`;
                     },
                 },
             },
@@ -110,40 +120,33 @@ const Analytics = () => {
         <div className="p-4 md:p-8 space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6" ref={statsRef}>
                 {stats.map((stat) => (
-                    <div key={stat.label} className="p-4 md:p-6 bg-gray-50 rounded-xl">
-                        <p className="text-sm text-gray-600">{stat.label}</p>
+                    <div
+                        key={stat.label}
+                        className="p-5 md:p-6 bg-gray-50 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+                    >
+                        <p className="text-sm text-gray-500">{stat.label}</p>
                         <div className="flex items-baseline gap-2 mt-2">
-                            <p className="text-2xl font-bold">{stat.value}</p>
-                            <span className="text-sm text-green-600">{stat.change}</span>
+                            <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
+                            <span className="text-sm text-green-600 font-medium">
+                                {stat.change}
+                            </span>
                         </div>
                     </div>
                 ))}
             </div>
 
-            <div ref={chartRef} className="relative h-[150px] md:h-[250px] bg-white rounded-xl px-4 pt-4 md:pt-6 md:px-6">
+            <div
+                ref={chartRef}
+                className="relative h-[180px] md:h-[280px] bg-white rounded-2xl shadow px-4 pt-5 md:pt-6 md:px-6"
+            >
                 <div className="absolute top-4 md:top-6 left-4 md:left-6">
-                    <h3 className="text-lg font-medium">Transaction Volume</h3>
-                    <p className="text-sm text-gray-600">Last 6 months</p>
+                    <h3 className="text-lg font-semibold text-gray-800">Transaction Volume</h3>
+                    <p className="text-sm text-gray-500">Last 6 months</p>
                 </div>
-                <div className="h-full pt-12 md:pt-16">
+                <div className="h-full pt-14 md:pt-20">
                     <Line data={data} options={options} />
                 </div>
             </div>
-
-            {/* <div ref={featuresRef} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="p-4 md:p-6 bg-gray-50 rounded-xl">
-                    <h4 className="mb-2 text-lg font-medium">Real-time Monitoring</h4>
-                    <p className="text-sm text-gray-600">
-                        Track transactions and user activity in real-time with detailed analytics
-                    </p>
-                </div>
-                <div className="p-4 md:p-6 bg-gray-50 rounded-xl">
-                    <h4 className="mb-2 text-lg font-medium">Smart Insights</h4>
-                    <p className="text-sm text-gray-600">
-                        AI-powered insights to help you optimize your payment flows
-                    </p>
-                </div>
-            </div> */}
         </div>
     );
 };
