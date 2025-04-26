@@ -52,3 +52,17 @@ export const ScrollTriggeredAnimation = ({
         </motion.div>
     );
 };
+
+export const MotionDiv = ({ variants, initial, animate, children, className, ...props }) => {
+    return (
+        <motion.div
+            variants={variants}
+            initial={initial}
+            animate={animate}
+            className={className}
+            {...props}
+        >
+            {children}
+        </motion.div>
+    );
+};

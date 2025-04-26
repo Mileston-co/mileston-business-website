@@ -7,6 +7,10 @@ import Analytics from './home/Analytics';
 import Features from './home/Features';
 import CardFunctions from './home/CardFunctions';
 import CryptoCurrency from './home/CryptoCurrency';
+import WhyMileston from './home/WhyMileston';
+import Benefits from './home/Benefits';
+import Partners from './home/Partners';
+
 // import Testimonials from './home/Testimonials';
 
 function Home() {
@@ -14,15 +18,24 @@ function Home() {
         <main className="container mx-auto">
             <HeroSection />
             <section id="sendMoneyForm">
-            <SendMoneyForm />
+                <SendMoneyForm />
             </section>
+            {/* <section id="partners">
+                <Partners />
+            </section> */}
             <Analytics />
-            {/* <Testimonials /> */}
             <section id="features">
                 <Features />
             </section>
+            <section id="why-mileston">
+                <WhyMileston />
+            </section>
             <section id="cards">
                 <CardFunctions />
+            </section>
+
+            <section id="benefits">
+                <Benefits />
             </section>
             <section id="crypto">
                 <CryptoCurrency />

@@ -42,7 +42,7 @@ const SendMoneyWidget = () => {
     }, []);
 
     return (
-        <Card className="h-[520px]" padding="p-10 lg:p-14">
+        <Card className=" bg-gray-50 h-[520px]" padding="p-10 lg:p-14">
             <div
                 className="flex flex-col justify-between w-full h-full p-6 bg-white shadow-lg rounded-3xl"
                 ref={amountRef}
@@ -86,7 +86,7 @@ const SendMoneyWidget = () => {
                                 setSendingMilestoneMoney(true);
                                 setTimeout(() => {
                                     setMoneySent(true);
-                                }, 3000);
+                                }, 1000);
                             }}
                             className="w-full py-3 font-semibold text-white transition bg-black rounded-lg hover:bg-gray-800"
                         >
@@ -108,7 +108,7 @@ const SendMoneyWidget = () => {
 
                     {!sendingMilestoneMoney && (
                         <button className="w-full py-3 font-semibold text-black transition bg-gray-100 rounded-lg hover:bg-gray-100">
-                            Pay with Wallet Connect
+                            Pay with QR Code
                         </button>
                     )}
                 </div>

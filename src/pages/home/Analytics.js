@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { MotionDiv } from '@/components/Animation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaypal, faStripe } from '@fortawesome/free-brands-svg-icons';
 import MilestonLogoWhite from '../../assets/images/logo-white.png';
@@ -40,7 +40,7 @@ function Analytics() {
     ];
 
     return (
-        <section className="grid items-stretch gap-6 -mt-16 mb-28 px-4 py-16 mx-auto max-w-7xl lg:grid-cols-3">
+        <section className="grid items-stretch gap-6 -mt-28 mb-12 px-4 py-16 mx-auto max-w-7xl lg:grid-cols-3">
             <FeesCard processors={processors} />
             <IntegrationCard />
             <ProtectionCard />
@@ -96,7 +96,7 @@ function FeesCard({ processors }) {
                                 </p>
                             </div>
                             <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
-                                <motion.div
+                                <MotionDiv
                                     className="h-full bg-gradient-to-r from-green-300 to-green-500 rounded-full"
                                     initial={{ width: '0%' }}
                                     animate={{
@@ -116,10 +116,15 @@ function FeesCard({ processors }) {
                     </div>
                 ))}
                 <div className="pt-2 mt-4 border-t border-gray-100">
-                    <button className="flex items-center justify-center w-full gap-2 px-4 py-2 text-sm font-medium text-black transition-all rounded-lg">
-                        Compare all payment options
+                    <a
+                        href="https://cal.com/ahmedrza"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center w-full gap-2 px-4 py-2 text-sm font-medium text-black transition-all rounded-lg"
+                    >
+                        Schedule a Demo
                         <ArrowRight className="w-4 h-4" />
-                    </button>
+                    </a>
                 </div>
             </div>
         </Feature>
@@ -165,7 +170,10 @@ function IntegrationCard() {
                         ))}
                     </ul>
 
-                    <button className="flex items-center justify-center w-full gap-2 px-4 py-2 mt-12 text-sm font-medium text-white transition-all bg-black rounded-lg">
+                    <button
+                        className="flex items-center justify-center w-full gap-2 px-4 py-2 mt-12 text-sm font-medium text-white transition-all bg-black rounded-lg"
+                        onClick={() => window.open('https://docs.mileston.co/', '_blank')}
+                    >
                         View Documentation
                         <ArrowRight className="w-4 h-4" />
                     </button>
@@ -190,8 +198,8 @@ function ProtectionCard() {
                 <div className="flex flex-col items-center">
                     <div className="relative mb-6">
                         <div className="absolute inset-0 bg-emerald-100 rounded-full blur-xl opacity-30"></div>
-                        <div className="relative p-4 bg-gray-100 rounded-full">
-                            <Shield className="w-10 h-10 text-black" />
+                        <div className="relative p-4 bg-black rounded-full">
+                            <Shield className="w-10 h-10 text-white" />
                         </div>
                     </div>
 
@@ -227,7 +235,10 @@ function ProtectionCard() {
                         ))}
                     </ul>
 
-                    <button className="flex items-center justify-center w-full gap-2 px-4 py-2 mt-6 text-sm font-medium text-white transition-all bg-black rounded-lg">
+                    <button
+                        className="flex items-center justify-center w-full gap-2 px-4 py-2 mt-6 text-sm font-medium text-white transition-all bg-black rounded-lg"
+                        onClick={() => window.open('https://cal.com/ahmedrza', '_blank')}
+                    >
                         Learn More
                         <ArrowRight className="w-4 h-4" />
                     </button>
@@ -240,18 +251,21 @@ function ProtectionCard() {
 function Feature({ icon, title, description, children, className = '' }) {
     return (
         <div
-            className={`rounded-2xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl ${className}`}
+            className={`rounded-2xl p-6 shadow-lg transition-all duration-300 border border-white/10 hover:shadow-2xl relative overflow-hidden ${className}`}
         >
-            <div className="flex items-center gap-3 mb-2">
-                <div className="flex items-center justify-center w-10 h-10 bg-white rounded-lg shadow-sm">
-                    {icon}
+            <div className="absolute inset-0 backdrop-blur-md bg-white/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+
+            <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-2">
+                    <div className="flex items-center justify-center w-10 h-10 bg-white rounded-lg shadow-sm">
+                        {icon}
+                    </div>
+                    <h3 className="text-xl font-bold">{title}</h3>
                 </div>
-                <h3 className="text-xl font-bold">{title}</h3>
+
+                <p className="mb-4 text-gray-600">{description}</p>
+                {children}
             </div>
-
-            <p className="mb-4 text-gray-600">{description}</p>
-
-            {children}
         </div>
     );
 }

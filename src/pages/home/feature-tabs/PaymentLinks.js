@@ -2,14 +2,12 @@
 
 import React, { useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLink, faCopy, faCheck, faQrcode, faShare } from '@fortawesome/free-solid-svg-icons';
+import { faLink, faCopy, faCheck } from '@fortawesome/free-solid-svg-icons';
 
 const PaymentLinks = () => {
     const [copied, setCopied] = useState(false);
-    const [activeTab, setActiveTab] = useState('link');
     const demoRef = useRef();
     const featuresRef = useRef();
-    const integrationRef = useRef();
 
     const demoLink = 'demo.mileston.co';
 
@@ -25,18 +23,18 @@ const PaymentLinks = () => {
             description: 'Create payment links in seconds with custom amounts and descriptions.',
         },
         {
-            title: 'Multiple Blockchains Support',
+            title: 'Multi-Chain',
             description: 'Accept payments through multiple blockchains with just one wallet.',
         },
         {
             title: 'Quick Settlement',
-            description: 'Settlement is as immediate as the time you got paid.',
+            description:
+                'Settlement is as immediate as the time you got paid, no delays, just direct access.',
         },
     ];
 
     return (
         <div className="p-4 md:p-8 space-y-8">
-
             {/* Demo Section */}
             <div ref={demoRef} className="p-4 md:p-6 bg-gray-50 rounded-xl">
                 <div className="flex flex-col md:flex-row items-center justify-between p-4 bg-white border border-gray-100 rounded-lg link-content">
@@ -92,7 +90,6 @@ const PaymentLinks = () => {
                     </code>
                 </div>
             </div> */}
-
         </div>
     );
 };
