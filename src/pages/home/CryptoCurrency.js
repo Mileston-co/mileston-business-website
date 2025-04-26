@@ -34,7 +34,7 @@ function CryptoCurrency() {
             </ScrollTriggeredAnimation>
 
             <ScrollTriggeredAnimation>
-                <div className="flex justify-center items-center w-full h-[400px] md:h-[500px] lg:h-[600px] md:max-w-[1100px]">
+                <div className="flex justify-center items-center w-[50%] h-[400px] md:h-[500px] lg:h-[600px] md:max-w-5xl">
                     <GlobeVisualization />
                 </div>
             </ScrollTriggeredAnimation>
