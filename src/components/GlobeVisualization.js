@@ -1,12 +1,15 @@
+// src/components/GlobeVisualization.js
 'use client';
 
 import React, { useEffect, useRef } from 'react';
 import Globe from 'globe.gl';
 
-const GlobeVisualization = () => {
-    const globeRef = useRef();
+export default function GlobeVisualization() {
+    const globeRef = useRef(null);
 
     useEffect(() => {
+        if (!globeRef.current) return;
+
         const globe = Globe()(globeRef.current)
             .globeImageUrl('/assets/images/globe.png')
             .backgroundColor('rgba(0,0,0,0)')
@@ -15,17 +18,22 @@ const GlobeVisualization = () => {
             .atmosphereColor('#3a9bdc')
             .atmosphereAltitude(0.15);
 
+        // **allow page scroll when swiping the canvas**
+        const canvas = globeRef.current.querySelector('canvas');
+        if (canvas) canvas.style.touchAction = 'pan-y';
+
         const controls = globe.controls();
         controls.autoRotate = true;
         controls.autoRotateSpeed = 0.6;
         controls.enableZoom = false;
 
-        // Enable rotation only for medium screens or larger
         const handleResize = () => {
             if (window.innerWidth < 768) {
                 controls.enableRotate = false;
+                globe.pointOfView({ altitude: 3 }, 1000);
             } else {
                 controls.enableRotate = true;
+                globe.pointOfView({ altitude: 2.5 }, 1000);
             }
         };
 
@@ -44,18 +52,14 @@ const GlobeVisualization = () => {
             { lat: 28.6139, lng: 77.209, text: 'New Delhi' },
         ];
 
-        // Clickable points
         globe
             .pointsData(points)
             .pointAltitude(() => 0.1)
             .pointColor(() => '#4ade80')
             .pointRadius(0.3)
             .pointLabel('text')
-            .onPointClick((point) => {
-                alert(`Clicked: ${point.text}`);
-            });
+            .onPointClick((pt) => alert(`Clicked: ${pt.text}`));
 
-        // Animated floating labels
         globe
             .labelsData(points)
             .labelLat((d) => d.lat)
@@ -66,12 +70,8 @@ const GlobeVisualization = () => {
             .labelColor(() => '#facc15')
             .labelAltitude(0.01);
 
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
+        return () => window.removeEventListener('resize', handleResize);
     }, []);
 
     return <div ref={globeRef} className="w-full h-full" />;
-};
-
-export default GlobeVisualization;
+}
