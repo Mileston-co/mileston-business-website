@@ -34,10 +34,8 @@ export default function CryptoCurrency() {
             </ScrollTriggeredAnimation>
 
             <ScrollTriggeredAnimation>
-                <div className="flex justify-center items-center w-full h-[300px] md:h-[400px] lg:h-[500px]">
-                    <div className="relative w-[385px] h-[250px] md:w-[350px] md:h-[350px] lg:w-[250px] lg:h-[450px]">
-                        <GlobeVisualization />
-                    </div>
+                <div className="pr-0 sm:pr-10 ">
+                    <GlobeVisualization />
                 </div>
             </ScrollTriggeredAnimation>
         </section>
