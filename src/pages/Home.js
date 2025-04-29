@@ -17,12 +17,12 @@ function Home() {
     return (
         <main className="container mx-auto">
             <HeroSection />
-            <section id="sendMoneyForm">
-                <SendMoneyForm />
-            </section>
             {/* <section id="partners">
                 <Partners />
             </section> */}
+            <section id="sendMoneyForm">
+                <SendMoneyForm />
+            </section>
             <Analytics />
             <section id="features">
                 <Features />
