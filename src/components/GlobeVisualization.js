@@ -71,5 +71,5 @@ export default function GlobeVisualization() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    return <div ref={globeRef} className="w-full h-full" />;
+    return <div ref={globeRef} className="w-[80%]" />;
 }

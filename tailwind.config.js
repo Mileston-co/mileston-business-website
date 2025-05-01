@@ -1,5 +1,4 @@
 const svgToDataUri = require('mini-svg-data-uri');
-
 const colors = require('tailwindcss/colors');
 const { default: flattenColorPalette } = require('tailwindcss/lib/util/flattenColorPalette');
 
@@ -41,9 +40,16 @@ module.exports = {
     ],
     theme: {
         extend: {
+            keyframes: {
+                scroll: {
+                    '0%': { transform: 'translateX(0%)' },
+                    '100%': { transform: 'translateX(-50%)' },
+                },
+            },
             animation: {
+                scroll: 'scroll 30s linear infinite',
                 spin_slow: 'spin 10s linear infinite',
-              },
+            },
             borderRadius: {
                 lg: 'var(--radius)',
                 md: 'calc(var(--radius) - 2px)',

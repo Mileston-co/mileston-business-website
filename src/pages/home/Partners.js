@@ -12,6 +12,7 @@ export default function Partners() {
         'stride',
     ];
 
+    // Duplicate logos for seamless scroll
     const loopLogos = [...logos, ...logos];
 
     return (
@@ -26,7 +27,7 @@ export default function Partners() {
 
                     {/* Infinite Scrolling Logos */}
                     <div className="relative overflow-hidden mt-12">
-                        <div className="flex animate-scroll whitespace-nowrap gap-16 items-center">
+                        <div className="flex w-max animate-scroll gap-16 items-center whitespace-nowrap">
                             {loopLogos.map((logo, idx) => (
                                 <div
                                     key={idx}
