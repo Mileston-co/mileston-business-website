@@ -24,10 +24,6 @@ function SendMoneyForm() {
             <ScrollTriggeredAnimation>
                 <div className="flex flex-col items-center gap-4 lg:gap-6 text-center px-6 lg:px-20">
                     <div>
-                        <p className="inline-flex items-center gap-2 bg-[#f7f9fc] text-black font-medium px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition">
-                            <CreditCard className="w-4 h-4 text-green-500" />
-                            Mileston For Payments
-                        </p>
                         <Title className="font-semibold">Efficiency at Its Best</Title>
                     </div>
                     <div className="max-w-2xl mx-auto">

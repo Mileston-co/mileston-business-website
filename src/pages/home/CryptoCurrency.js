@@ -34,7 +34,7 @@ export default function CryptoCurrency() {
             </ScrollTriggeredAnimation>
 
             <ScrollTriggeredAnimation>
-                <div className="pr-0 sm:pr-10 ">
+                <div className="px-5 sm:px-0 sm:pr-10 ">
                     <GlobeVisualization />
                 </div>
             </ScrollTriggeredAnimation>

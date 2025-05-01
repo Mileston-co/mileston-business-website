@@ -17,9 +17,9 @@ function Home() {
     return (
         <main className="container mx-auto">
             <HeroSection />
-            {/* <section id="partners">
+            <section id="partners">
                 <Partners />
-            </section> */}
+            </section>
             <section id="sendMoneyForm">
                 <SendMoneyForm />
             </section>

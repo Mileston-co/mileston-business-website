@@ -1,4 +1,3 @@
-// src/components/GlobeVisualization.js
 'use client';
 
 import React, { useEffect, useRef } from 'react';
@@ -15,10 +14,9 @@ export default function GlobeVisualization() {
             .backgroundColor('rgba(0,0,0,0)')
             .pointOfView({ lat: 20, lng: 0, altitude: 2.5 })
             .showAtmosphere(true)
-            .atmosphereColor('#3a9bdc')
             .atmosphereAltitude(0.15);
 
-        // **allow page scroll when swiping the canvas**
+        // **allow page scroll when swiping the canvas on mobile**
         const canvas = globeRef.current.querySelector('canvas');
         if (canvas) canvas.style.touchAction = 'pan-y';
 
