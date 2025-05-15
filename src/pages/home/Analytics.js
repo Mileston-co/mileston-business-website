@@ -117,12 +117,12 @@ function FeesCard({ processors }) {
                 ))}
                 <div className="pt-2 mt-4 border-t border-gray-100">
                     <a
-                        href="https://cal.com/ahmedrza"
+                        href="https://business.mileston.co/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-center w-full gap-2 px-4 py-2 text-sm font-medium text-black transition-all rounded-lg"
                     >
-                        Schedule a Demo
+                        Try Mileston
                         <ArrowRight className="w-4 h-4" />
                     </a>
                 </div>

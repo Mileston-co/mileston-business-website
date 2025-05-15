@@ -1,13 +1,13 @@
-import React from "react";
-import Button from "../components/Button";
-import Link from "next/link";
+import React from 'react';
+import Button from '../components/Button';
+import Link from 'next/link';
 
 const RightActions = () => (
     <div className="flex items-center lg:space-x-8">
-        <Link href="https://cal.com/ahmedrza" target="_blank">
+        <Link href="http://business.mileston.co/" target="_blank">
             <Button className="flex-shrink-0">
-                <span className="hidden lg:inline">Schedule a Demo</span>
-                <span className="lg:hidden">Demo</span>
+                <span className="hidden lg:inline">Sign Up</span>
+                <span className="lg:hidden">Sign Up</span>
             </Button>
         </Link>
     </div>

@@ -11,7 +11,7 @@ import { BaseFramerAnimation, ScrollTriggeredAnimation } from '../components/Ani
 
 export default function ClientRootLayout({ children }) {
     useEffect(() => {
-        Clarity.init('qxbsz43bp');
+        Clarity.init('qxbsz4q3bp');
     }, []);
 
     return (
