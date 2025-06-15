@@ -1,6 +1,8 @@
 'use client';
 import Image from 'next/image';
 import { ScrollTriggeredAnimation } from '@/components/Animation';
+import Button from '@/components/Button';
+import Link from 'next/link';
 
 export default function Partners({
     title = 'Trusted By',
@@ -54,6 +56,15 @@ export default function Partners({
                                 </div>
                             ))}
                         </div>
+                        {!animation && (
+                            <div className='mt-10'>
+                                <Button>
+                                    <Link target='_blank' href="https://cal.com/ahmedrza">
+                                        Become a Partner
+                                    </Link>
+                                </Button>
+                            </div>
+                        )}
                     </div>
                 </ScrollTriggeredAnimation>
             </div>
