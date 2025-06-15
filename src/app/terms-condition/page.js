@@ -1,6 +1,6 @@
 export default function TermsAndConditions() {
     return (
-        <div className="p-6 mx-auto">
+        <div className="p-6 mx-auto max-w-4xl my-20">
             <h1 className="text-2xl font-bold text-center mb-6">Terms and Conditions</h1>
             <p className="mb-4">
                 These <span className="font-bold">Terms and Conditions</span> govern your use of the

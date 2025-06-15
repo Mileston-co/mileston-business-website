@@ -6,7 +6,7 @@ import Logo from './../components/Logo';
 const FOOTER_LINKS = [
     { label: 'Features', url: '#features' },
     { label: 'Docs', url: 'https://docs.mileston.co' },
-    { label: 'About Us', url: '#sendMoneyForm' },
+    { label: 'About Us', url: '/about' },
     { label: 'Careers', url: 'https://www.linkedin.com/company/mileston/jobs/' },
     { label: 'Contact Us', url: 'mailto:ahmed@mileston.co' },
 ];

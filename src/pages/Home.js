@@ -17,7 +17,7 @@ function Home() {
     return (
         <main className="container mx-auto">
             <HeroSection />
-            <section id="partners">
+            <section id="users">
                 <Partners />
             </section>
             <section id="sendMoneyForm">
@@ -33,9 +33,16 @@ function Home() {
             <section id="cards">
                 <CardFunctions />
             </section>
-
             <section id="benefits">
                 <Benefits />
+            </section>
+            <section id="partners">
+                <Partners
+                    title='In Partnership with'
+                    logos={['circle', 'thirdweb', 'lifi']}
+                    animation={false}
+                    duplicate={false}
+                />
             </section>
             <section id="crypto">
                 <CryptoCurrency />
