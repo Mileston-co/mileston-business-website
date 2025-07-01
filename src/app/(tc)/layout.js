@@ -1,4 +1,4 @@
-import ClientRootLayout from '../components/ClientRootLayout';
+import ClientRootLayout from '../../components/ClientRootLayout';
 
 export const metadata = {
     title: 'Mileston',

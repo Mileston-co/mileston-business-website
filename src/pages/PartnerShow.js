@@ -3,27 +3,31 @@ import { X } from "lucide-react";
 
 function PartnerShow({ partnerId }) {
     return (
-        <main className="container mx-auto">
-            <section className="bg-black text-white flex items-center justify-center py-36 lg:py-80 mx-8 rounded-3xl px-12 mt-32">
-                <div className="max-w-lg w-full flex flex-col gap-10 lg:gap-14 items-center">
-                    {/* Mileston Logo shows first */}
-                    <BaseFramerAnimation>
-                        <img
-                            src={'/assets/images/logo-white.png'}
-                            className="w-100 h-100"
-                            alt="Mileston Logo"
-                        />
-                    </BaseFramerAnimation>
-
-                    {/* A X-icon to show partnership */}
-                    <X className="w-50 h-50" />
-
+        <main className="">
+            <section className="bg-black text-white flex items-center justify-center min-h-screen px-5 lg:px-0">
+                <div className="grid grid-cols-3 items-center justify-items-center gap-4 lg:gap-8 w-full max-w-4xl">
                     {/* Logo of partnering company */}
                     <BaseFramerAnimation>
                         <img
                             src={`/assets/images/${partnerId}.png`}
-                            className="w-100 h-100"
+                            className="w-32 h-32 lg:w-50 lg:h-50 object-contain"
                             alt={`${partnerId} logo`}
+                            width={200}
+                            height={200}
+                        />
+                    </BaseFramerAnimation>
+
+                    {/* A X-icon to show partnership */}
+                    <X className="w-16 h-16 lg:w-20 lg:h-20 text-white" />
+
+                    {/* Mileston Logo */}
+                    <BaseFramerAnimation>
+                        <img
+                            src={'/assets/images/logo-short.png'}
+                            className="w-32 h-32 lg:w-50 lg:h-50 object-contain"
+                            alt="Mileston Logo"
+                            width={150}
+                            height={150}
                         />
                     </BaseFramerAnimation>
                 </div>

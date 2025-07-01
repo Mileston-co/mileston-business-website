@@ -3,7 +3,7 @@ name: Deploy to Azure Container Registry (ACR)
 on:
   push:
     branches:
-      - main
+      - partners-prod
 
 jobs:
   deploy:
