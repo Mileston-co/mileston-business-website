@@ -1,53 +1,33 @@
 'use client';
 
-import React from 'react';
-import HeroSection from './home/HeroSection';
-import SendMoneyForm from './home/SendMoneyForm';
-import Analytics from './home/Analytics';
-import Features from './home/Features';
-import CardFunctions from './home/CardFunctions';
-import CryptoCurrency from './home/CryptoCurrency';
-import WhyMileston from './home/WhyMileston';
-import Benefits from './home/Benefits';
-import Partners from './home/Partners';
+import { useState, useEffect } from 'react';
 
-// import Testimonials from './home/Testimonials';
+import HomeContent from "./HomeContent";
+import PartnerShow from "./PartnerShow";
 
-function Home() {
+
+function Home({ partnerId }) {
+    const [countdown, setCountdown] = useState(3);
+    const [showMainContent, setShowMainContent] = useState(false)
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCountdown((prevCount) => {
+                if (prevCount <= 1) {
+                    clearInterval(timer);
+                    setShowMainContent(true);
+                }
+                return prevCount - 1;
+            });
+        }, 1000);
+
+        return () => clearInterval(timer);
+    }, [])
     return (
-        <main className="container mx-auto">
-            <HeroSection />
-            <section id="users">
-                <Partners />
-            </section>
-            <section id="sendMoneyForm">
-                <SendMoneyForm />
-            </section>
-            <Analytics />
-            <section id="features">
-                <Features />
-            </section>
-            <section id="why-mileston">
-                <WhyMileston />
-            </section>
-            <section id="cards">
-                <CardFunctions />
-            </section>
-            <section id="benefits">
-                <Benefits />
-            </section>
-            <section id="partners">
-                <Partners
-                    title='In Partnership with'
-                    logos={['circle', 'thirdweb', 'lifi']}
-                    animation={false}
-                    duplicate={false}
-                />
-            </section>
-            <section id="crypto">
-                <CryptoCurrency />
-            </section>
-        </main>
+        <>
+            {!showMainContent && <PartnerShow partnerId={partnerId} />}
+            {showMainContent && <HomeContent partnerId={partnerId} />}
+        </>
     );
 }
 
