@@ -27,12 +27,12 @@ jobs:
       # Build the Docker image
       - name: Build Docker image
         run: |
-          docker build --no-cache -t mileston-landing:latest .
+          docker build --no-cache -t mb-partners-landing-page:latest .
 
       # Tag the image for ACR
       - name: Tag Docker image
         run: |
-          docker tag mileston-landing:latest ${{ secrets.ACR_NAME }}.azurecr.io/${{ secrets.ACR_REPOSITORY }}:latest
+          docker tag mb-partners-landing-page:latest ${{ secrets.ACR_NAME }}.azurecr.io/${{ secrets.ACR_REPOSITORY }}:latest
 
       # Push the image to ACR
       - name: Push Docker image
