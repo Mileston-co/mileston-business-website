@@ -14,6 +14,19 @@ export default function ClientRootLayout({ children }) {
         Clarity.init('qxbsz4q3bp');
     }, []);
 
+    useEffect(() => {
+        try {
+            const url = new URL(window.location.href);
+            const ref = url.searchParams.get('ref');
+            if (ref) localStorage.setItem('referralId', ref);
+            const stored = localStorage.getItem('referralId');
+            const api = process.env.REACT_APP_AFF_API_URL || 'https://user-service.mileston.co';
+            if (stored && api) {
+                fetch(`${api}/public/affiliate/clicks/${stored}`, { method: 'POST' });
+            }
+        } catch (e) { }
+    }, []);
+
     return (
         <>
             <Script id="show-banner">
