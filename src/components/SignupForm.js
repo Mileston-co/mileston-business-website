@@ -22,15 +22,15 @@ export default function SignupForm() {
             })
                 .then((response) => {
                     if (response.ok) {
-                        window.open('https://business.mileston.co/auth/verify-code?ref=' + localStorage.getItem('referralId') || '', '_blank');
+                        window.open('https://business.mileston.co/auth/verify-code?ref=' + getRef() || '', '_blank');
                     } else {
                         setError('Unable to sign up');
-                        window.location.href = 'https://business.mileston.co/auth/signin?ref=' + localStorage.getItem('referralId') || '';
+                        window.location.href = 'https://business.mileston.co/auth/signin?ref=' + getRef() || '';
                     }
                 })
                 .catch(() => {
                     setError('Unable to sign up');
-                    window.location.href = 'https://business.mileston.co/auth/signin?ref=' + localStorage.getItem('referralId') || '';
+                    window.location.href = 'https://business.mileston.co/auth/signin?ref=' + getRef() || '';
                 });
         } else {
             setError('Please enter a valid work email');

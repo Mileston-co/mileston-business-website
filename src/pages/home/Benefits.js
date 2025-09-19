@@ -3,6 +3,7 @@ import { Wallet, DollarSign, ShieldCheck, Activity, ChevronRight, CreditCard } f
 import Title from '@/components/Title';
 import Text from '@/components/Text';
 import { ScrollTriggeredAnimation } from '@/components/Animation';
+import getRef from '@/components/getref';
 
 export default function Benefits() {
     const [activeCard, setActiveCard] = useState(0);
@@ -153,7 +154,7 @@ export default function Benefits() {
 
                 <div className="mt-12 flex justify-center">
                     <a
-                        href={"https://business.mileston.co/auth/signin?ref=" + localStorage.getItem('referralId') || ''}
+                        href={"https://business.mileston.co/auth/signin?ref=" + getRef() || ''}
                         className="group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium transition duration-300 ease-out border-2 border-gray-900 rounded-full shadow-md"
                     >
                         <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-black group-hover:translate-x-0 ease">
