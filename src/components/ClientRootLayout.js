@@ -20,7 +20,7 @@ export default function ClientRootLayout({ children }) {
             const ref = url.searchParams.get('ref');
             if (ref) localStorage.setItem('referralId', ref);
             const stored = localStorage.getItem('referralId');
-            const api = process.env.REACT_APP_AFF_API_URL || 'https://user-service.mileston.co';
+            const api = process.env.REACT_APP_AFF_API_URL || 'https://preview-user-service.mileston.co';
             if (stored && api) {
                 fetch(`${api}/public/affiliate/clicks/${stored}`, { method: 'POST' });
             }
