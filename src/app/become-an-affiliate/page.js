@@ -14,7 +14,7 @@ export default function BecomeAnAffiliate() {
                     Earn by sharing Mileston. Help businesses accept crypto payments with low fees and fast settlement.
                 </SubHeading>
                 <div className="flex items-center justify-center gap-4">
-                    <Link href="https://affiliates.mileston.co" target="_blank" rel="noopener noreferrer">
+                    <Link href="https://affiliate.mileston.co" target="_blank" rel="noopener noreferrer">
                         <Button color="black">Sign up to get started</Button>
                     </Link>
                     <a href="#how-it-works" className="text-gray-700 hover:text-black font-semibold">
@@ -91,7 +91,7 @@ export default function BecomeAnAffiliate() {
             {/* Final CTA */}
             <div className="mt-20 text-center">
                 <SubHeading className="text-gray-700 mb-6">Start earning with Mileston today</SubHeading>
-                <Link href="https://affiliates.mileston.co" target="_blank" rel="noopener noreferrer">
+                <Link href="https://affiliate.mileston.co" target="_blank" rel="noopener noreferrer">
                     <Button color="black">Sign up free</Button>
                 </Link>
             </div>
