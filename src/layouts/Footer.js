@@ -6,6 +6,7 @@ import Logo from './../components/Logo';
 const FOOTER_LINKS = [
     { label: 'Features', url: '#features' },
     { label: 'Docs', url: 'https://docs.mileston.co' },
+    { label: 'Become an Affiliate', url: '/become-an-affiliate' },
     { label: 'API Status', url: 'https://status.mileston.co' },
     { label: 'About Us', url: '/about' },
     { label: 'Careers', url: 'https://www.linkedin.com/company/mileston/jobs/' },
@@ -64,7 +65,7 @@ export default function Footer() {
                                         <li key={label}>
                                             <Link
                                                 href={url}
-                                                {...(label === 'Careers'
+                                                {...(label === 'Careers' || label === 'Become an Affiliate'
                                                     ? {
                                                           target: '_blank',
                                                           rel: 'noopener noreferrer',
